@@ -28,7 +28,7 @@
         <section id="contact">
             <h2>Contactez-moi</h2>
             <p>Vous pouvez aussi me contacter directement à cette adresse : <a href="mailto:maud.planner@gmail.com">maud.planner@gmail.com</a></p>
-            <form action="mailto:maud.planner@gmail.com" method="post" enctype="text/plain">
+            <form name="contact" method="POST" data-netlify="true">
                 <label for="nom">Nom :</label>
                 <input type="text" id="nom" name="nom" required>
 
@@ -67,5 +67,16 @@
             <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleAutreCommentaire(value) {
+            const commentaireField = document.getElementById('autreCommentaire');
+            if (value === 'autre') {
+                commentaireField.style.display = 'block';
+            } else {
+                commentaireField.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
