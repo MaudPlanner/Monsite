@@ -27,7 +27,6 @@
     <main>
         <section id="contact">
             <h2>Contactez-moi</h2>
-            <p>Vous pouvez aussi me contacter directement à cette adresse : <a href="mailto:maud.planner@gmail.com">maud.planner@gmail.com</a></p>
             <form name="contact" method="POST" data-netlify="true">
                 <label for="nom">Nom :</label>
                 <input type="text" id="nom" name="nom" required>
@@ -70,13 +69,14 @@
 
     <script>
         function toggleAutreCommentaire(value) {
-            const commentaireField = document.getElementById('autreCommentaire');
-            if (value === 'autre') {
-                commentaireField.style.display = 'block';
+            const autreCommentaire = document.getElementById("autreCommentaire");
+            if (value === "autre") {
+                autreCommentaire.style.display = "block";
             } else {
-                commentaireField.style.display = 'none';
+                autreCommentaire.style.display = "none";
             }
         }
     </script>
 </body>
 </html>
+
