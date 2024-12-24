@@ -12,6 +12,7 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            position: relative;
         }
         h2 {
             text-align: center;
@@ -32,6 +33,27 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        .photo-haut-gauche {
+            position: absolute;
+            top: -50px; /* Ajustez cette valeur pour la hauteur */
+            left: -140px; /* Ajustez cette valeur pour la position à gauche */
+            width: 180px; /* Ajustez cette valeur pour la largeur */
+            height: 180px; /* Ajustez cette valeur pour la hauteur */
+            border-radius: 50%;
+            border: 3px solid #15457a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+        .social-icons img {
+    width: 30px; /* Réduisez la taille ici */
+    height: 30px; /* Réduisez la taille ici */
+    margin: 0 10px; /* Ajustez l'espacement entre les icônes */
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Ajout d'un effet au survol */
+}
     </style>
 </head>
 <body>
@@ -44,7 +66,6 @@
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="tarifs.html">Tarifs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="rdv.html">Prendre RDV</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -53,6 +74,7 @@
     </header>
 
     <main>
+        <img src="PhotoMaud.png" alt="Photo de Maud" class="photo-haut-gauche">
         <section id="content">
             <h2>Bienvenue sur Maud Planner</h2>
             <p class="highlight">Votre experte en planification d’interventions</p>
@@ -88,9 +110,20 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
+    <div class="container">
+        <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/maud.planner/" target="_blank">
+                <img src="Instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61569983277664" target="_blank">
+                <img src="facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/in/maudplanner-amazingplanning" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prendre RDV - Maud Planner</title>
     <link rel="stylesheet" href="styles_maud_planner.css">
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <style>
+        #calendly-container {
+            margin: 20px auto;
+            max-width: 800px;
+            height: 600px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,7 +25,6 @@
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="tarifs.html">Tarifs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="rdv.html">Prendre RDV</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -27,8 +35,14 @@
     <main>
         <section id="rdv">
             <h2>Prendre Rendez-vous</h2>
-            <p>Planifiez une rencontre en cliquant sur le lien ci-dessous :</p>
-            <a href="https://calendly.com/maud-planner/30min" class="btn" target="_blank">Réservez maintenant</a>
+            <p>Choisissez un créneau directement depuis le calendrier ci-dessous :</p>
+            <div id="calendly-container">
+                <div
+                    class="calendly-inline-widget"
+                    data-url="https://calendly.com/maud-planner/30min"
+                    style="min-width: 320px; height: 600px;">
+                </div>
+            </div>
         </section>
     </main>
 
