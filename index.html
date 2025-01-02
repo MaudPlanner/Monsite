@@ -57,6 +57,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             object-fit: cover;
         }
+@media only screen and (max-width: 768px) {
+    .photo-haut-gauche {
+        width: 100px; /* Réduit la taille de la photo */
+        height: 100px;
+        position: relative; /* Change la position pour éviter le texte */
+        margin: 0 auto; /* Centre la photo horizontalement */
+        display: block; /* Assure que la photo soit bien visible */
+        left: 0; /* Supprime les décalages */
+        top: 0; /* Supprime les décalages */
+    }
+}
         .social-icons img {
     width: 30px; /* Réduisez la taille ici */
     height: 30px; /* Réduisez la taille ici */
