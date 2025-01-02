@@ -5,83 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifs - Maud Planner</title>
     <link rel="stylesheet" href="styles_maud_planner.css">
-<style>
-/* Styles pour le menu déroulant */
-.menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu li {
-    margin-right: 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Menu en version mobile */
-@media only screen and (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #15457a;
-        position: absolute;
-        top: 60px; /* Ajustez en fonction de la hauteur de votre header */
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .menu li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .menu a {
-        color: white;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-    }
-}
-
-/* Menu desktop */
-.menu-toggle {
-    display: none;
-}
-
-/* Optimisation pour la version mobile */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px; /* Ajuste la taille du texte */
-        padding: 10px;
-    }
-
-    header .container, footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    main {
-        margin: 10px auto;
-        max-width: 100%; /* Permet d'utiliser toute la largeur disponible */
-        padding: 10px;
-    }
-}
-</style>
     <style>
+        /* Menu déroulant pour mobile */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #15457a;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #mobile-menu ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #mobile-menu ul li {
+            margin: 10px 0;
+        }
+
+        #mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Bouton menu pour mobile */
+        .menu-toggle {
+            display: none; /* Caché par défaut */
+            background-color: #15457a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Affichage des styles pour mobile */
+        @media only screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Affiche le bouton menu */
+            }
+
+            nav {
+                display: none; /* Cache le menu classique sur mobile */
+            }
+
+            #mobile-menu.show {
+                display: flex; /* Affiche le menu déroulant */
+            }
+        }
+
         main {
             margin: 20px auto;
             max-width: 900px;
@@ -89,22 +69,43 @@
             line-height: 1.6;
             color: #333;
         }
+
         h2, h3 {
             color: #15457a;
             margin-top: 30px;
         }
+
         h3 {
             font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 10px;
         }
+
         ul {
             margin-left: 20px;
         }
+
         p {
             margin: 10px 0;
             text-align: justify;
         }
+
+        .cta-link {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #15457a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .cta-link:hover {
+            background-color: #123a66;
+        }
+
         .highlight {
             font-weight: bold;
             margin: 20px 0;
@@ -117,16 +118,25 @@
         <div class="container">
             <img src="Logo%20Maud%20Planner..png" alt="Maud Planner Logo">
             <h1 style="color: white;">Maud Planner</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
             <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul id="menu" class="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="rdv.html">Prendre RDV</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-</nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <nav id="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -139,7 +149,7 @@
             <li>Équipe de moins de 8 personnes : <strong>à partir de 1 200 € / mois</strong></li>
             <li>Équipe de plus de 8 personnes : <strong>à partir de 1 800 € / mois</strong></li>
         </ul>
-        <p>Ce service peut être ajusté en fonction de vos besoins spécifiques. Contactez-moi pour un devis personnalisé.</p>
+        <a href="rdv.html" class="cta-link">Appel découverte</a>
 
         <h3>Optimisation & audits</h3>
         <p>Vous avez l’impression que vos outils et process actuels ne sont pas optimisés ? Je réalise un audit complet pour identifier les points de blocage, puis je vous accompagne pour transformer vos plannings avec des solutions adaptées et performantes.</p>
@@ -147,7 +157,7 @@
             <li>Audit complet (analyse + recommandations) : <strong>à partir de 800 €</strong></li>
             <li>Accompagnement d’un mois ou plus : <strong>à partir de 2 000 € / mois</strong></li>
         </ul>
-        <p>Contactez-moi pour discuter de vos besoins et obtenir un devis personnalisé.</p>
+        <a href="rdv.html" class="cta-link">Appel découverte</a>
 
         <h3>Gestion des réservations logistiques</h3>
         <p>Les déplacements professionnels ne devraient pas être une source de stress. Je prends en charge vos réservations (transport, hébergement) pour garantir une organisation fluide et vous permettre de vous concentrer sur l’essentiel.</p>
@@ -155,21 +165,21 @@
             <li>Équipe de moins de 8 personnes : <strong>à partir de 300 € / mois</strong></li>
             <li>Équipe de plus de 8 personnes : <strong>à partir de 500 € / mois</strong></li>
         </ul>
-        <p>Ce service peut être intégré à la planification quotidienne à un tarif préférentiel. Contactez-moi pour plus d’informations.</p>
+        <a href="rdv.html" class="cta-link">Appel découverte</a>
 
         <h3>Mise en place d’outils personnalisés</h3>
         <p>Je vous aide à identifier et mettre en place les outils de planification les plus adaptés à vos besoins. J’accompagne vos équipes dans leur utilisation pour garantir une prise en main rapide et efficace.</p>
         <ul>
-            <li>Accompagnement pour la mise en place d’outils : <strong>à partir de 300 € / mois</strong></li>
+            <li>Accompagnement pour la mise en place d’outils : <strong>à partir de 300 €</strong></li>
         </ul>
-        <p>Ces outils peuvent être proposés dans le cadre d’un accompagnement global. Contactez-moi pour une offre sur mesure.</p>
+        <a href="rdv.html" class="cta-link">Appel découverte</a>
 
         <h3>Community Management</h3>
         <p>Vous souhaitez booster votre présence en ligne tout en restant concentré sur votre activité ? Je gère vos réseaux sociaux en créant des publications engageantes et adaptées à votre cible, pour améliorer votre visibilité et renforcer votre image de marque.</p>
         <ul>
             <li>À partir de 4 publications par mois : <strong>300 € / mois</strong></li>
         </ul>
-        <p>Les tarifs varient selon le nombre de réseaux sociaux gérés. Contactez-moi pour une offre personnalisée.</p>
+        <a href="rdv.html" class="cta-link">Appel découverte</a>
 
         <h3>Pourquoi choisir mes services ?</h3>
         <ul>
@@ -181,7 +191,7 @@
         </ul>
         <p>Chaque projet est unique. Je m’adapte à vos besoins pour vous offrir un service personnalisé et des solutions sur-mesure. N’hésitez pas à me contacter pour un devis adapté à votre demande.</p>
 
-        <p class="highlight"><a href="rdv.html">Prendre RDV pour un appel découverte</a></p>
+        <a href="rdv.html" class="cta-link">Prendre RDV pour un appel découverte</a>
     </main>
 
     <footer>
@@ -189,11 +199,12 @@
             <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
         </div>
     </footer>
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById("menu");
-        menu.classList.toggle("show");
-    }
-</script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>

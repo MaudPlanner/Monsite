@@ -9,17 +9,16 @@
         /* Menu déroulant pour mobile */
         #mobile-menu {
             display: none;
-            flex-direction: column; /* Les liens s'empilent verticalement */
-            background-color: #15457a; /* Couleur de fond du menu */
+            flex-direction: column;
+            background-color: #15457a;
             position: absolute;
-            top: 60px; /* Ajustez en fonction de la hauteur de votre header */
-            right: 10px; /* Alignement à droite */
+            top: 60px;
+            right: 10px;
             padding: 10px;
             border-radius: 5px;
             z-index: 1000;
         }
 
-        /* Style des liens dans le menu */
         #mobile-menu ul {
             padding: 0;
             margin: 0;
@@ -36,9 +35,8 @@
             font-size: 16px;
         }
 
-        /* Bouton menu pour mobile */
         .menu-toggle {
-            display: none; /* Caché par défaut */
+            display: none;
             background-color: #15457a;
             color: white;
             border: none;
@@ -48,18 +46,17 @@
             border-radius: 5px;
         }
 
-        /* Afficher le menu sur petit écran */
         @media only screen and (max-width: 768px) {
             .menu-toggle {
-                display: block; /* Affiche le bouton menu */
+                display: block;
             }
 
             nav {
-                display: none; /* Cache le menu par défaut sur mobile */
+                display: none;
             }
 
             #mobile-menu.show {
-                display: flex; /* Affiche le menu déroulant */
+                display: flex;
             }
         }
     </style>
@@ -69,8 +66,16 @@
         <div class="container">
             <img src="Logo%20Maud%20Planner..png" alt="Maud Planner Logo">
             <h1 style="color: white;">Maud Planner</h1>
-            <!-- Bouton menu pour mobile -->
             <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
             <nav id="mobile-menu">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
@@ -97,7 +102,6 @@
     </footer>
 
     <script>
-        // Fonction pour basculer l'affichage du menu mobile
         function toggleMenu() {
             const menu = document.getElementById("mobile-menu");
             menu.classList.toggle("show");

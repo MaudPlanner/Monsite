@@ -6,172 +6,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Maud Planner</title>
     <link rel="stylesheet" href="styles_maud_planner.css">
-<style>
-/* Styles pour le menu déroulant */
-.menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    <style>
+        /* Menu déroulant pour mobile */
+        #mobile-menu {
+            display: none;
+            flex-direction: column; /* Les liens s'empilent verticalement */
+            background-color: #15457a; /* Couleur de fond du menu */
+            position: absolute;
+            top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+            right: 10px; /* Alignement à droite */
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
 
-.menu li {
-    margin-right: 20px;
-}
+        #mobile-menu ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
 
-.menu a {
-    text-decoration: none;
-    color: white;
-}
+        #mobile-menu ul li {
+            margin: 10px 0;
+        }
 
-/* Menu en version mobile */
-@media only screen and (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #15457a;
-        position: absolute;
-        top: 60px; /* Ajustez en fonction de la hauteur de votre header */
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
+        #mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
 
-    .menu li {
-        margin: 10px 0;
-        text-align: center;
-    }
+        /* Bouton menu pour mobile */
+        .menu-toggle {
+            display: none; /* Caché par défaut */
+            background-color: #15457a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-    .menu a {
-        color: white;
-    }
+        /* Affichage des styles pour mobile */
+        @media only screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Affiche le bouton menu */
+            }
 
-    .menu.show {
-        display: flex;
-    }
+            nav {
+                display: none; /* Cache le menu classique sur mobile */
+            }
 
-    .menu-toggle {
-        display: block;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-    }
-}
+            #mobile-menu.show {
+                display: flex; /* Affiche le menu déroulant */
+            }
 
-/* Menu desktop */
-.menu-toggle {
-    display: none;
-}
+            body {
+                font-size: 16px; /* Ajuste la taille du texte */
+                padding: 10px;
+            }
 
-/* Optimisation pour la version mobile */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px; /* Ajuste la taille du texte */
-        padding: 10px;
-    }
+            header .container, footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-    header .container, footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    main {
-        margin: 10px auto;
-        max-width: 100%; /* Permet d'utiliser toute la largeur disponible */
-        padding: 10px;
-    }
-}
-</style>
+            main {
+                margin: 10px auto;
+                max-width: 100%; /* Permet d'utiliser toute la largeur disponible */
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
             <img src="Logo%20Maud%20Planner..png" alt="Maud Planner Logo">
             <h1 style="color: white;">Maud Planner</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
             <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul id="menu" class="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="rdv.html">Prendre RDV</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-</nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <nav id="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-<main>
-    <section id="services" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; text-align: center;">
-        <h2 style="width: 100%;">Mes Services</h2>
+    <main>
+        <section id="services" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; text-align: center;">
+            <h2 style="width: 100%;">Mes Services</h2>
 
-        <!-- Colonne 1 -->
-        <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
-            <img src="planification interventions.png" alt="Planification" style="width: 100px; height: 100px; object-fit: contain;">
-            <div style="margin-top: 10px; margin-bottom: 10px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; text-align: center;">Planification et organisation des interventions</p>
+            <!-- Service 1 -->
+            <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
+                <img src="planification interventions.png" alt="Planification" style="width: 100px; height: 100px; object-fit: contain;">
+                <p style="font-weight: bold; margin-top: 10px;">Planification et organisation des interventions</p>
+                <p>Je vous accompagne dans la gestion complète de vos plannings, en optimisant l’organisation des missions sur le terrain et la coordination des équipes, tout en prenant en compte vos contraintes (horaires, localisation, logistique).</p>
             </div>
-            <div style="height: auto; display: flex; align-items: center; justify-content: center;">
-                <p style="text-align: center;">Je vous accompagne dans la gestion complète de vos plannings, en optimisant l’organisation des missions sur le terrain et la coordination des équipes, tout en prenant en compte vos contraintes (horaires, localisation, logistique).</p>
-            </div>
-        </div>
 
-        <!-- Colonne 2 -->
-        <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
-            <img src="audit des systèmes.png" alt="Audit des systèmes" style="width: 100px; height: 100px; object-fit: contain;">
-            <div style="margin-top: 10px; margin-bottom: 10px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; text-align: center;">Audit et optimisation des systèmes de planning</p>
+            <!-- Service 2 -->
+            <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
+                <img src="audit des systèmes.png" alt="Audit des systèmes" style="width: 100px; height: 100px; object-fit: contain;">
+                <p style="font-weight: bold; margin-top: 10px;">Audit et optimisation des systèmes de planning</p>
+                <p>J’évalue vos outils et processus actuels pour identifier les axes d’amélioration. Je propose des solutions adaptées pour fluidifier la gestion de vos plannings et maximiser votre efficacité.</p>
             </div>
-            <div style="height: auto; display: flex; align-items: center; justify-content: center;">
-                <p style="text-align: center;">J’évalue vos outils et processus actuels pour identifier les axes d’amélioration. Je propose des solutions adaptées pour fluidifier la gestion de vos plannings et maximiser votre efficacité.</p>
-            </div>
-        </div>
 
-        <!-- Colonne 3 -->
-        <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
-            <img src="création et accompagnement.png" alt="Création d'outils" style="width: 100px; height: 100px; object-fit: contain;">
-            <div style="margin-top: 10px; margin-bottom: 10px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; text-align: center;">Création et mise en place d’outils personnalisés</p>
+            <!-- Service 3 -->
+            <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
+                <img src="création et accompagnement.png" alt="Création d'outils" style="width: 100px; height: 100px; object-fit: contain;">
+                <p style="font-weight: bold; margin-top: 10px;">Création et mise en place d’outils personnalisés</p>
+                <p>Je vous aide à identifier et mettre en place les outils de planification les plus adaptés à vos besoins. J’accompagne vos équipes dans leur utilisation pour garantir une prise en main rapide et efficace.</p>
             </div>
-            <div style="height: auto; display: flex; align-items: center; justify-content: center;">
-                <p style="text-align: center;">Je vous aide à identifier et mettre en place les outils de planification les plus adaptés à vos besoins. J’accompagne vos équipes dans leur utilisation pour garantir une prise en main rapide et efficace.</p>
-            </div>
-        </div>
 
-        <!-- Colonne 4 -->
-        <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
-            <img src="gestion des réservations logistiques.png" alt="Gestion logistique" style="width: 100px; height: 100px; object-fit: contain;">
-            <div style="margin-top: 10px; margin-bottom: 10px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; text-align: center;">Gestion des réservations logistiques (avion, train, voiture, hôtel)</p>
+            <!-- Service 4 -->
+            <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
+                <img src="gestion des réservations logistiques.png" alt="Gestion logistique" style="width: 100px; height: 100px; object-fit: contain;">
+                <p style="font-weight: bold; margin-top: 10px;">Gestion des réservations logistiques</p>
+                <p>Je prends en charge vos réservations liées aux interventions (transport, hébergement) pour garantir une coordination fluide et un gain de temps dans votre organisation.</p>
             </div>
-            <div style="height: auto; display: flex; align-items: center; justify-content: center;">
-                <p style="text-align: center;">Je prends en charge vos réservations liées aux interventions (transport, hébergement) pour garantir une coordination fluide et un gain de temps dans votre organisation.</p>
-            </div>
-        </div>
 
-        <!-- Colonne 5 -->
-        <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
-            <img src="comunity management.png" alt="Community Management" style="width: 100px; height: 100px; object-fit: contain;">
-            <div style="margin-top: 10px; margin-bottom: 10px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; text-align: center;">Community Management</p>
+            <!-- Service 5 -->
+            <div style="width: 200px; display: flex; flex-direction: column; align-items: center;">
+                <img src="comunity management.png" alt="Community Management" style="width: 100px; height: 100px; object-fit: contain;">
+                <p style="font-weight: bold; margin-top: 10px;">Community Management</p>
+                <p>Je développe votre présence en ligne grâce à des contenus engageants, une stratégie adaptée et un suivi des performances pour renforcer votre visibilité et votre image.</p>
             </div>
-            <div style="height: auto; display: flex; align-items: center; justify-content: center;">
-                <p style="text-align: center;">Je développe votre présence en ligne grâce à des contenus engageants, une stratégie adaptée et un suivi des performances pour renforcer votre visibilité et votre image.</p>
-            </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
         </div>
     </footer>
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById("menu");
-        menu.classList.toggle("show");
-    }
-</script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
