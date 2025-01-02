@@ -81,6 +81,11 @@
         padding: 10px;
     }
 }
+<style>
+#menu {
+    display: block !important; /* Force l’affichage */
+    background-color: lightblue; /* Donne une couleur pour le visualiser */
+}
 </style>
 </head>
 <body>
@@ -88,7 +93,8 @@
         <div class="container">
             <img src="Logo%20Maud%20Planner..png" alt="Maud Planner Logo">
             <h1 style="color: white;">Maud Planner</h1>
-            <nav>
+           
+ <nav>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul id="menu" class="menu">
         <li><a href="index.html">Accueil</a></li>
@@ -115,6 +121,7 @@
     </footer>
 <script>
     function toggleMenu() {
+        console.log("Menu toggle triggered"); // Ajout pour vérifier le déclenchement
         const menu = document.getElementById("menu");
         menu.classList.toggle("show");
     }
