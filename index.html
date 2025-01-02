@@ -54,6 +54,40 @@
 .social-icons img:hover {
     transform: scale(1.2); /* Ajout d'un effet au survol */
 }
+    @media only screen and (max-width: 768px) {
+        body {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        header .container, footer .container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        nav ul {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        .photo-haut-gauche {
+            width: 120px;
+            height: 120px;
+            left: -20px;
+            top: 10px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 5px;
+        }
+    }
+
     </style>
 </head>
 <body>
