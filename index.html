@@ -8,11 +8,11 @@
 <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
         <nav id="mobile-menu">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="tarifs.html">Tarifs</a></li>
-                <li><a href="rdv.html">Prendre RDV</a></li>
-                <li><a href="blog.html">Blog</a></li>
+           <li><a href="index.html">Accueil</a></li>
+           <li><a href="Auditdesplannings.html">Audit des plannings</a></li>
+           <li><a href="OrgaRescue.html">Orga'Rescue</a></li>
+           <li><a href="rdv.html">Prendre RDV</a></li>
+           <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
     </div>
@@ -165,7 +165,22 @@
             margin: 0 5px;
         }
     }
-
+.cta a {
+        display: inline-block;
+        background-color: #145da0; /* Couleur du bouton */
+        color: white;
+        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .cta a:hover {
+        background-color: #104a80; /* Couleur du bouton au survol */
+    }
     </style>
 </head>
 <body>
@@ -176,8 +191,8 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="tarifs.html">Tarifs</a></li>
+                    <li><a href="Auditdesplannings.html">Audit des plannings</a></li>
+                    <li><a href="OrgaRescue.html">Orga'Rescue</a></li>
                     <li><a href="rdv.html">Prendre RDV</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -185,41 +200,50 @@
         </div>
     </header>
 
-    <main>
-        <img src="PhotoMaud.png" alt="Photo de Maud" class="photo-haut-gauche">
-        <section id="content">
-            <h2>Bienvenue sur Maud Planner</h2>
-            <p class="highlight">Votre experte en planification d’interventions</p>
+   <main>
+    <img src="PhotoMaud.png" alt="Photo de Maud" class="photo-haut-gauche">
+    <section id="content">
+        <h2 style="font-size: 28px; font-weight: bold; text-align: center;">Bienvenue sur Maud Planner</h2>
+        <p class="highlight" style="color: #e18b22;">Votre experte en organisation et optimisation du temps</p>
 
-            <p>Vous faites face à des plannings lourds à organiser, des imprévus qui compliquent la coordination ou des outils inadaptés ? 
-            Ces problèmes ralentissent vos équipes sur le terrain et génèrent une charge mentale supplémentaire.</p>
+        <p>Que vous gériez une équipe d’intervenants terrain ou que vous soyez indépendant, une organisation efficace est essentielle pour éviter la surcharge, mieux gérer vos priorités et retrouver un équilibre dans votre activité.</p>
 
-            <p>Je suis là pour vous aider. <br>
-            Grâce à mon expérience dans la gestion des plannings d’interventions, notamment dans des secteurs comme :</p>
-            <ul>
-                <li>la maintenance,</li>
-                <li>la sécurité au travail,</li>
-                <li>la protection des infrastructures,</li>
-            </ul>
+        <h3 style="color: #145da0;">Vous êtes en charge d’une équipe d’intervenants terrain ?</h3>
+        <p>Les plannings sont lourds à organiser, les urgences s’enchaînent et les outils en place ne sont plus adaptés ? Ces défis freinent la productivité de vos équipes et alourdissent votre charge mentale.</p>
+        <p>J’interviens pour analyser votre système de planification et vous proposer des solutions concrètes pour structurer et fluidifier vos interventions. Grâce à une organisation optimisée, vous pourrez vous recentrer sur votre cœur de métier sans être constamment accaparé par des problématiques de planning.</p>
+        <p class="cta"><a href="Auditdesplannings.html">Voir le service en détail</a></p>
 
-            <p>Je propose des solutions pratiques et sur-mesure. <br>
-            Mon objectif est clair :</p>
-            <ul>
-                <li>structurer vos plannings,</li>
-                <li>optimiser vos outils,</li>
-                <li>fluidifier votre organisation.</li>
-            </ul>
-            <p>Vous gagnez en sérénité et vos équipes retrouvent une efficacité optimale.</p>
+        <h3 style="color: #145da0;">Vous êtes solopreneur ou artisan ?</h3>
+        <p>Vous jonglez entre mille tâches sans avoir le temps de tout gérer sereinement ? Vous avez l’impression de courir après votre emploi du temps sans trouver de méthode qui fonctionne sur le long terme ?</p>
+        <p>Avec Orga'Rescue, je viens analyser votre quotidien en immersion pour identifier vos blocages et vous fournir un plan d’action concret. Vous retrouvez une organisation efficace et adaptée à votre rythme, sans perdre d’énergie sur des tâches mal structurées.</p>
+        <p class="cta"><a href="OrgaRescue.html">Voir le service en détail</a></p>
 
-            <p>Pendant plusieurs années, j’ai travaillé avec des entreprises confrontées à ces mêmes défis. Par exemple, chez <strong>Sodexo</strong>, j’ai accompagné les responsables santé-sécurité au travail dans la coordination de plannings complexes, en anticipant les imprévus et en assurant une gestion fluide. 
-            <br>Résultat : des équipes mieux organisées, moins de stress et des interventions réalisées dans les temps.</p>
+        <h3 style="color: #145da0;">Des solutions adaptées à votre métier</h3>
+        <p>Je suis là pour vous aider.<br>
+        Grâce à mon expérience dans la gestion de l’organisation et de la planification, notamment dans des secteurs comme :</p>
+        <ul>
+            <li>La maintenance</li>
+            <li>La sécurité au travail</li>
+            <li>La protection des infrastructures</li>
+        </ul>
 
-            <p>Aujourd’hui, je mets cette expertise au service de ceux qui gèrent des équipes de terrain dans des contextes techniques exigeants. 
-            <br>Mon approche est simple : comprendre vos besoins, apporter des solutions concrètes et garantir des résultats mesurables.</p>
+        <p>Je propose des solutions pratiques et sur-mesure pour améliorer votre gestion du temps et de vos priorités.</p>
 
-            <p class="cta">Prêt à alléger votre quotidien et optimiser vos plannings ? <br>Contactez-moi dès maintenant pour en discuter !</p>
-        </section>
-    </main>
+        <p>Mon objectif est clair :</p>
+        <ul>
+            <li>Structurer vos plannings et votre charge de travail</li>
+            <li>Optimiser vos outils et méthodes d’organisation</li>
+            <li>Fluidifier votre gestion quotidienne pour un meilleur équilibre</li>
+        </ul>
+
+        <div class="highlight-call">
+            <p><strong style="color: #e18b22;">Prêt à améliorer votre organisation ?</strong></p>
+            <p><strong style="color: #e18b22;">Discutons ensemble de vos besoins et trouvons la solution qui vous correspond.</strong></p>
+        </div>
+
+        <p class="cta"><a href="rdv.html">Réserver mon appel découverte gratuit</a></p>
+    </section>
+</main>
 
     <footer>
     <div class="container">
