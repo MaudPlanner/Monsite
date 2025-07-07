@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Maud Planner</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <style>
+        /* Menu déroulant pour mobile */
+        #mobile-menu {
+            display: none;
+            flex-direction: column; /* Les liens s'empilent verticalement */
+            background-color: #15457a; /* Couleur de fond du menu */
+            position: absolute;
+            top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+            right: 10px; /* Alignement à droite */
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #mobile-menu ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #mobile-menu ul li {
+            margin: 10px 0;
+        }
+
+        #mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Bouton menu pour mobile */
+        .menu-toggle {
+            display: none; /* Caché par défaut */
+            background-color: #15457a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Affichage des styles pour mobile */
+        @media only screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Affiche le bouton menu */
+            }
+
+            nav {
+                display: none; /* Cache le menu classique sur mobile */
+            }
+
+            #mobile-menu.show {
+                display: flex; /* Affiche le menu déroulant */
+            }
+
+            body {
+                font-size: 16px; /* Ajuste la taille du texte */
+                padding: 10px;
+            }
+
+            header .container, footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            main {
+                margin: 10px auto;
+                max-width: 100%; /* Permet d'utiliser toute la largeur disponible */
+                padding: 10px;
+            }
+        }
+        .cta a {
+            display: inline-block;
+            background-color: #145da0;
+            color: white;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .cta a:hover {
+            background-color: #104a80;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="assets/images/marque/logo-maud-planner.png" alt="Maud Planner Logo">
+            <h1 style="color: white;">Maud Planner</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+            <nav>
+                <ul>
+           <li><a href="index.html">Accueil</a></li>
+           <li><a href="packs-sos.html">Packs SOS</a></li>
+           <li><a href="orga-rescue.html">Orga'Rescue</a></li>
+           <li><a href="rdv.html">Prendre RDV</a></li>
+           <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <nav id="mobile-menu">
+                <ul>
+           <li><a href="index.html">Accueil</a></li>
+           <li><a href="packs-sos.html">Packs SOS</a></li>
+           <li><a href="orga-rescue.html">Orga'Rescue</a></li>
+           <li><a href="rdv.html">Prendre RDV</a></li>
+           <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+       <section id="orga-rescue" class="page-main-section">
+            <img src="assets/images/illustrations/photo-orga-rescue.jpg" alt="OrgaRescue" class="page-main-section-image">
+            <h1 style="color:#145DA0; text-align:center;">Orga’Rescue : ton accompagnement pour reprendre le contrôle de ton temps.</h1>
+            <p><strong style="color: #e18b22;">Un accompagnement personnalisé pour t’aider à alléger ta charge mentale, structurer ton organisation, et retrouver une sérénité durable.</strong></p>
+
+            <p>Quand on gère son activité seul, l’organisation peut vite devenir un défi. Entre la gestion des clients, les tâches administratives et la production, il est difficile de trouver un équilibre et de dégager du temps pour ce qui compte vraiment.</p>
+            <p class="cta"><a href="rdv.html" class="btn" style="display:block; margin:20px auto; width:fit-content;">Réserve ton appel découverte gratuit</a></p>
+
+            
+            <h2 style="color: #145da0;">Pourquoi cet accompagnement peut changer ta façon de travailler ?</h2>
+            <p>Orga’Rescue est pensé pour les freelances et solopreneurs qui veulent arrêter de subir leur agenda et enfin prioriser l’essentiel. Ensemble, nous allons clarifier tes priorités, structurer ton organisation et libérer ton espace mental.</p>
+    
+            <ul>
+                <li>plus de clarté sur tes priorités</li>
+                <li>un planning fluide et réaliste</li>
+                <li>moins de dispersion</li>
+                <li>une plus grande sérénité</li>
+                <li>plus de temps pour ce qui compte</li>
+            </ul>
+
+            <h2 style="color: #145da0;">Concrètement, comment ça fonctionne ?</h2>
+            <p>Orga’Rescue, c’est un accompagnement pas à pas, humain et sur mesure :</p>
+            <ul>
+                <li>Durée : 2 à 6 mois selon ton besoin</li>
+                <li>Séances : 1h toutes les semaines en visio</li>
+                <li>Suivi : messages illimités entre les séances et exercices</li>
+                <li>Plan d’action : co-construit et 100% adapté à ta réalité</li>
+                <li>Résultat : une organisation fluide et une sérénité retrouvée</li>
+            </ul>
+
+            <p class="cta"><a href="rdv.html" class="btn" style="display:block; margin:20px auto; width:fit-content;">Réserve ton appel découverte gratuit</a></p>
+
+            <h2 style="color: #145da0;">Est-ce que cet accompagnement est fait pour toi ?</h2>
+
+            <p>Cet accompagnement est fait pour toi si :</p>
+
+            <ul>
+                <li>tu es freelance ou solopreneur</li>
+                <li>tu gères seul(e) toute ton activité</li>
+                <li>tu as l’impression de tout porter sur tes épaules</li>
+                <li>tu veux avancer sans méthode culpabilisante</li>
+                <li>tu veux un soutien humain, bienveillant, et orienté résultats</li>
+            </ul>
+
+           <section id="temoignages" style="padding: 40px 20px;">
+  <h2 style="text-align:center; color:#145da0;">Ils ont osé reprendre la main sur leur organisation</h2>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px;">
+    
+    <div style="flex:1 1 300px; max-width:400px;">
+      <video controls style="width:60%; max-height:300px; margin:0 auto; display:block; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+        <source src="assets/videos/temoignages/temoignage-video-1.mp4" type="video/mp4">
+        Ton navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+    
+    <div style="flex:1 1 300px; max-width:400px;">
+      <video controls style="width:60%; max-height:300px; margin:0 auto; display:block; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+        <source src="assets/videos/temoignages/temoignage-video-2.mp4" type="video/mp4">
+        Ton navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+</section>
+
+            <h3 style="color: #e18b22;text-align:center;">Envie de reprendre le contrôle de ton temps, <strong>te sentir seul(e) ?</strong> </h3>
+ 
+</main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

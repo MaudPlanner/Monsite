@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Maud Planner</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <style>
+        /* Menu déroulant pour mobile */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+            /* Les liens s'empilent verticalement */
+            background-color: #15457a;
+            /* Couleur de fond du menu */
+            position: absolute;
+            top: 60px;
+            /* Ajustez en fonction de la hauteur de votre header */
+            right: 10px;
+            /* Alignement à droite */
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        #mobile-menu ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #mobile-menu ul li {
+            margin: 10px 0;
+        }
+
+        #mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Bouton menu pour mobile */
+        .menu-toggle {
+            display: none;
+            /* Caché par défaut */
+            background-color: #15457a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Affichage des styles pour mobile */
+        @media only screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                /* Affiche le bouton menu */
+            }
+
+            nav {
+                display: none;
+                /* Cache le menu classique sur mobile */
+            }
+
+            #mobile-menu.show {
+                display: flex;
+                /* Affiche le menu déroulant */
+            }
+
+            body {
+                font-size: 16px;
+                /* Ajuste la taille du texte */
+                padding: 10px;
+            }
+
+            header .container,
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            main {
+                margin: 10px auto;
+                max-width: 100%;
+                /* Permet d'utiliser toute la largeur disponible */
+                padding: 10px;
+            }
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #145da0;
+            /* Couleur du bouton */
+            color: white;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta a:hover {
+            background-color: #104a80;
+            /* Couleur du bouton au survol */
+        }
+
+        #audit-planning {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        .audit-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            left: -180px;
+            /* Éloigne l'image du texte */
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="assets/images/marque/logo-maud-planner.png" alt="Maud Planner Logo">
+            <h1 style="color: white;">Maud Planner</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="packs-sos.html">Packs SOS</a></li>
+                    <li><a href="orga-rescue.html">Orga'Rescue</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <nav id="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="packs-sos.html">Packs SOS</a></li>
+                    <li><a href="orga-rescue.html">Orga'Rescue</a></li>
+                    <li><a href="rdv.html">Prendre RDV</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-main-section">
+            <img class="page-main-section-image" src="assets/images/illustrations/pack-sos-procrastination.png" alt="Pack SOS Procrastination" />
+            <h1 style="color:#145DA0; text-align:center;">Les packs SOS : des formations en autonomie</h1>
+            <p>
+                Parce que parfois, un accompagnement complet n’est pas ce qu’il te faut, j’ai créé les Packs SOS : des
+                solutions digitales simples, concrètes et accessibles, pour débloquer une difficulté précise dans ton
+                organisation.
+            </p>
+            <p>
+                <strong style="color: #e18b22;text-align:center;">À ton rythme, sans pression, et en toute autonomie.</strong>
+            </p>
+            </div>
+
+
+            <section id="packs-sos" style="padding: 40px 20px;">
+                <h2 style="text-align:center; color:#145da0;">Découvre les Packs SOS</h2>
+                <p style="text-align:center; max-width:700px; margin: 0 auto 30px auto;">
+                    Des solutions digitales simples, concrètes et accessibles, pour débloquer une difficulté précise
+                    dans ton organisation, à ton rythme.
+                </p>
+
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+
+                    <!-- Pack 1 -->
+                    <div
+                        style="flex: 1 1 300px; max-width:400px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                        <h3 style="color:#15457a;">SOS Procrastination : Passe à l’Action !</h3>
+                        <p><strong>Objectif :</strong> comprendre pourquoi tu repousses toujours cette tâche si
+                            importante, identifier tes blocages et ce qui les explique réellement, et passer à l’action
+                            sans t’épuiser.</p>
+                        <p><strong>Contenu :</strong> une mini-formation vidéo de 2h, des exercices pratiques après
+                            chaque vidéo, et un challenge 7 jours pour enclencher le mouvement dès aujourd’hui.</p>
+                        <p><strong>Idéal pour :</strong> celles et ceux qui n'en peuvent plus de tout remettre à plus
+                            tard et qui veulent enfin passer à l'action.</p>
+
+                        <a href="https://www.maudplanner.com/sosprocrastination" class="btn"target="_blank"
+                            style="display:block; margin:15px auto; width:fit-content;background-color:#145DA0;">Découvrir
+                            le pack</a>
+                    </div>
+
+                    <!-- Pack 2 -->
+                    <div
+                        style="flex: 1 1 300px; max-width:400px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                        <h3 style="color:#15457a;">SOS Lâcher-Prise : Fais des Pauses Sans Culpabiliser !</h3>
+                        <p>🚧 Pack en cours de création 🚧</p>
+                    </div>
+
+                    <!-- Pack 3 -->
+                    <div
+                        style="flex: 1 1 300px; max-width:400px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                        <h3 style="color:#15457a;">SOS Priorisation : Travaille Sur l’Essentiel Sans Te Disperser !</h3>
+                        <p>🚧 Pack en cours de création 🚧</p>
+                    </div>
+
+                    <!-- Pack 4 -->
+                    <div
+                        style="flex: 1 1 300px; max-width:400px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                        <h3 style="color:#15457a;">SOS Équilibre : Réconcilie Vie Pro et Vie Perso !</h3>
+                        <p>🚧 Pack en cours de création 🚧</p>
+                    </div>
+
+                    <!-- Pack 5 -->
+                    <div
+                        style="flex: 1 1 300px; max-width:400px; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                        <h3 style="color:#15457a;">SOS Concentration : La Méthode Ultime Pour Se Concentrer !</h3>
+                        <p>🚧 Pack en cours de création 🚧</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <h4 style="color: #145DA0; text-align:center;">
+                Ces packs sont faits pour toi si :
+            </h4>
+
+            <div style="display:flex; justify-content:center;">
+                <ul style="text-align:left;">
+                    <li>Tu es freelance ou solopreneur</li>
+                    <li>Tu veux avancer à ton rythme</li>
+                    <li>Tu n’as pas envie d’un gros accompagnement sur plusieurs mois</li>
+                    <li>Tu veux agir tout de suite, sans te sentir jugé(e)</li>
+                </ul>
+            </div>
+
+
+            <a href="#packs-sos" class="btn"
+                style="display:block; margin:20px auto; width:fit-content;background-color:#145DA0;">
+                Je choisis mon pack maintenant</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Maud Planner. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>
