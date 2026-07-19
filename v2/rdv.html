@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réserver un appel découverte gratuit | Maud Planner</title>
-    <meta name="description" content="Réserve ton appel découverte gratuit avec Maud, coach en organisation et gestion du temps pour entrepreneur(e)s.">
+    <meta name="description" content="Réserve ton appel découverte gratuit avec Maud, coach en organisation et gestion du temps pour entrepreneur(e)s. Choisis ton créneau directement dans le calendrier.">
     <link rel="canonical" href="https://www.maudplanner.com/rdv">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,14 +23,34 @@
     </header>
 
     <main>
-        <section class="page-provisoire">
-            <div class="conteneur conteneur--etroit anim-ecran">
-                <p class="surtitre">Appel découverte</p>
-                <h1>La réservation en ligne arrive bientôt sur cette page</h1>
-                <p>Cette page est en cours de construction : elle accueillera le calendrier de réservation de l'appel découverte gratuit.</p>
-                <p><a href="index.html" class="bouton">Revenir à l'accueil</a></p>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="conteneur conteneur--etroit">
+                <p class="surtitre anim-hero">Appel découverte</p>
+                <h1 class="anim-hero">Réserve ton appel découverte gratuit</h1>
+                <p class="hero__sous-titre anim-hero">Un échange gratuit et sans engagement : on fait le point sur ta situation, et tu repars en sachant ce qui pourrait vraiment t'aider.</p>
             </div>
         </section>
+
+        <!-- Calendrier -->
+        <section class="section section--claire">
+            <div class="conteneur conteneur--etroit">
+                <p class="surtitre">Le calendrier</p>
+                <h2>Choisis ton créneau</h2>
+                <div class="calendly-conteneur">
+                    <div
+                        class="calendly-inline-widget"
+                        data-url="https://calendly.com/maud-planner"
+                        style="min-width: 320px; height: 700px;">
+                    </div>
+                    <noscript>
+                        <p>Le calendrier a besoin de JavaScript pour s'afficher. Tu peux aussi réserver ton créneau directement sur <a href="https://calendly.com/maud-planner">calendly.com/maud-planner</a>.</p>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="pied">
@@ -42,7 +62,7 @@
                 <li><a href="produits-digitaux.html">Produits digitaux</a></li>
                 <li><a href="crash-test.html">Le Crash Test de ta journée</a></li>
                 <li><a href="rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="blog/">Blog</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -53,6 +73,7 @@
         </div>
     </footer>
 
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>

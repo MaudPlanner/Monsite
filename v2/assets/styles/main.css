@@ -793,6 +793,21 @@ a {
     color: var(--bleu);
 }
 
+/* --- Page RDV (Calendly) ------------------------------------------------------ */
+
+.calendly-conteneur {
+    background-color: var(--blanc);
+    border-radius: var(--rayon);
+    padding: 0.5rem;
+    box-shadow: 0 4px 16px rgba(20, 93, 160, 0.08);
+    margin-top: 1.5rem;
+}
+
+.calendly-conteneur noscript p {
+    padding: 1rem;
+    margin: 0;
+}
+
 /* --- Pages provisoires ------------------------------------------------------ */
 
 .page-provisoire {
