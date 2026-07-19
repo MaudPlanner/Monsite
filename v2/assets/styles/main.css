@@ -713,6 +713,86 @@ a {
     color: var(--bleu);
 }
 
+/* --- Page Produits digitaux --------------------------------------------------- */
+
+.produits {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .produits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .produits > .produit-carte--pleine {
+        grid-column: 1 / -1;
+    }
+}
+
+.produit-carte {
+    background-color: var(--blanc);
+    color: var(--encre);
+    border-radius: var(--rayon);
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 16px rgba(20, 93, 160, 0.08);
+}
+
+.produit-carte h3 {
+    color: var(--bleu);
+    margin-bottom: 0.35rem;
+}
+
+.produit-carte .pastille-bientot {
+    margin: 0.5rem 0 0.75rem;
+}
+
+.produit-carte p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.produit-carte p:last-child {
+    margin-bottom: 0;
+}
+
+.produit-carte__note {
+    font-size: var(--taille-petit);
+    opacity: 0.75;
+}
+
+.produit-carte--bundle {
+    border: 2px solid var(--orange);
+}
+
+.pastille-gratuit {
+    display: inline-block;
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: var(--taille-petit);
+    color: var(--blanc);
+    background-color: var(--orange);
+    border-radius: 999px;
+    padding: 0.4rem 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.carte-crash-test {
+    background-color: var(--blanc);
+    color: var(--encre);
+    border-radius: var(--rayon);
+    padding: 2rem 1.5rem;
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+.carte-crash-test h2 {
+    color: var(--bleu);
+}
+
 /* --- Pages provisoires ------------------------------------------------------ */
 
 .page-provisoire {
