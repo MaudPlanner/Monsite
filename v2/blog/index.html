@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le blog | Maud Planner</title>
-    <meta name="description" content="Conseils d'organisation et de gestion du temps pour entrepreneur(e)s : les articles du blog de Maud Planner.">
+    <title>Le blog : organisation et gestion du temps | Maud Planner</title>
+    <meta name="description" content="Conseils concrets d'organisation et de gestion du temps pour entrepreneur(e)s : les articles du blog de Maud Planner, sans injonctions ni méthode miracle.">
     <link rel="canonical" href="https://www.maudplanner.com/blog/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,14 +23,54 @@
     </header>
 
     <main>
-        <section class="page-provisoire">
-            <div class="conteneur conteneur--etroit anim-ecran">
-                <p class="surtitre">Blog</p>
-                <h1>Les premiers articles arrivent bientôt</h1>
-                <p>Le blog est en préparation : tu y trouveras des conseils concrets d'organisation et de gestion du temps, sans injonctions ni méthode miracle.</p>
-                <p><a href="../orientation/index.html" class="bouton">Faire le parcours d'orientation</a></p>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="conteneur conteneur--etroit">
+                <p class="surtitre anim-hero">Le blog</p>
+                <h1 class="anim-hero">Organisation et gestion du temps, sans méthode miracle</h1>
+                <p class="hero__sous-titre anim-hero">Des conseils concrets pour t'organiser à ta façon, à ton rythme, dans ta réalité d'entrepreneur(e).</p>
             </div>
         </section>
+
+        <!-- Liste des articles -->
+        <section class="section section--claire">
+            <div class="conteneur">
+                <h2 class="anim-apparition">Les articles</h2>
+
+                <!--
+                POUR AJOUTER UN ARTICLE : décommenter et dupliquer la carte
+                ci-dessous en tête de liste (article le plus récent en premier),
+                puis remplacer le slug, la date, le titre et le résumé.
+                Voir blog/AJOUTER-UN-ARTICLE.md pour le mode d'emploi complet.
+
+                <div class="articles-liste">
+                    <a href="slug-de-l-article.html" class="carte-article">
+                        <time datetime="2026-01-01">1 janvier 2026</time>
+                        <h3>Titre de l'article</h3>
+                        <p>Résumé de l'article en une ou deux phrases.</p>
+                    </a>
+                </div>
+                -->
+
+                <!-- État vide : à SUPPRIMER dès la publication du premier article -->
+                <div class="etat-vide anim-apparition">
+                    <h3>Les premiers articles sont en préparation</h3>
+                    <p>En attendant, tu peux faire le Crash Test gratuit de ta journée : un calculateur qui compare les tâches que tu as prévues au temps dont tu disposes vraiment.</p>
+                    <p><a href="../crash-test.html" class="bouton">Faire le Crash Test gratuit</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passerelle -->
+        <section class="section section--bleue appel-final">
+            <div class="conteneur conteneur--etroit anim-apparition">
+                <h2>Besoin de plus qu'un article ?</h2>
+                <p>Le parcours d'orientation t'aide à trouver l'outil ou l'accompagnement adapté à ta situation, en quelques questions.</p>
+                <a href="../orientation/index.html" class="bouton bouton--large">Faire le parcours d'orientation</a>
+            </div>
+        </section>
+
     </main>
 
     <footer class="pied">

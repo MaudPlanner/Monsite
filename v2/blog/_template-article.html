@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     TEMPLATE D'ARTICLE - NE PAS PUBLIER TEL QUEL
+     Mode d'emploi complet : blog/AJOUTER-UN-ARTICLE.md
+
+     Checklist avant publication :
+     1. Remplacer TOUT ce qui est entre [CROCHETS]
+     2. Supprimer la balise <meta name="robots" content="noindex">
+     3. Vérifier le slug dans l'URL canonique et le JSON-LD
+     4. Ajouter la carte de l'article dans blog/index.html
+     5. Ajouter l'URL dans sitemap.xml
+     ============================================================ -->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[TITRE DE L'ARTICLE] | Blog Maud Planner</title>
+    <meta name="description" content="[META DESCRIPTION UNIQUE DE L'ARTICLE, 150 CARACTÈRES ENVIRON]">
+    <link rel="canonical" href="https://www.maudplanner.com/blog/[SLUG-DE-L-ARTICLE]">
+    <meta name="robots" content="noindex"><!-- À SUPPRIMER lors de la publication -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/styles/main.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "[TITRE DE L'ARTICLE]",
+        "description": "[MÊME META DESCRIPTION QUE CI-DESSUS]",
+        "datePublished": "[AAAA-MM-JJ]",
+        "dateModified": "[AAAA-MM-JJ]",
+        "inLanguage": "fr",
+        "mainEntityOfPage": "https://www.maudplanner.com/blog/[SLUG-DE-L-ARTICLE]",
+        "author": {
+            "@type": "Person",
+            "name": "Maud",
+            "jobTitle": "Coach en organisation et gestion du temps",
+            "url": "https://www.maudplanner.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Maud",
+            "url": "https://www.maudplanner.com/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <header class="entete">
+        <div class="conteneur">
+            <img src="../assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="../index.html" class="entete__nom">Maud Planner</a>
+        </div>
+    </header>
+
+    <main>
+
+        <article>
+            <!-- En-tête de l'article -->
+            <div class="section--claire article-en-tete">
+                <div class="conteneur conteneur--etroit">
+                    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+                        <ol>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="index.html">Blog</a></li>
+                            <li aria-current="page">[TITRE COURT DE L'ARTICLE]</li>
+                        </ol>
+                    </nav>
+                    <h1>[TITRE DE L'ARTICLE]</h1>
+                    <time datetime="[AAAA-MM-JJ]">[JJ mois AAAA]</time>
+                </div>
+            </div>
+
+            <!-- Corps de l'article -->
+            <div class="section section--claire article-corps" style="padding-top: 0;">
+                <div class="conteneur conteneur--etroit">
+
+                    <p>[INTRODUCTION DE L'ARTICLE]</p>
+
+                    <h2>[PREMIER INTERTITRE]</h2>
+                    <p>[CONTENU]</p>
+
+                    <h2>[DEUXIÈME INTERTITRE]</h2>
+                    <p>[CONTENU]</p>
+
+                    <!-- Exemples de blocs disponibles :
+
+                    Liste à puces :
+                    <ul>
+                        <li>Premier point</li>
+                        <li>Deuxième point</li>
+                    </ul>
+
+                    Citation ou point clé mis en avant :
+                    <blockquote>
+                        <p>Le point important à retenir.</p>
+                    </blockquote>
+                    -->
+
+                    <!-- CTA contextuel de fin d'article : adapter le freebie
+                         ou l'offre au sujet de l'article. Par défaut : Crash Test. -->
+                    <div class="encart" style="max-width: none; margin-top: 2.5rem;">
+                        <h2>[TITRE DU CTA, PAR EXEMPLE : Envie de journées plus réalistes ?]</h2>
+                        <p>[PHRASE DE TRANSITION VERS LE FREEBIE OU L'OFFRE]</p>
+                        <p><a href="../crash-test.html" class="bouton">[TEXTE DU BOUTON]</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="pied">
+        <div class="conteneur">
+            <ul class="pied__liens">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../orientation/index.html">Parcours d'orientation</a></li>
+                <li><a href="../orga-rescue.html">Orga Rescue</a></li>
+                <li><a href="../produits-digitaux.html">Produits digitaux</a></li>
+                <li><a href="../crash-test.html">Le Crash Test de ta journée</a></li>
+                <li><a href="../rdv.html">Prendre rendez-vous</a></li>
+                <li><a href="index.html">Blog</a></li>
+            </ul>
+            <div class="pied__reseaux">
+                <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61569983277664" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.linkedin.com/in/maudplanner-amazingplanning" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="pied__copyright">&copy; 2026 Maud Planner. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
