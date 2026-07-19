@@ -1,0 +1,438 @@
+/* ==========================================================================
+   Maud Planner V2 — Design system
+   Couleurs : bleu #145da0 en fond, orange #e18b22 boutons + accents,
+   pêches #ffc0a7 / #fad5c7 en touches discrètes.
+   Polices : Poppins (titres), Montserrat (sous-titres), Comfortaa (texte).
+   Mobile-first : styles de base pour 375 px, media queries en min-width.
+   ========================================================================== */
+
+:root {
+    --bleu: #145da0;
+    --bleu-fonce: #0e4578;
+    --orange: #e18b22;
+    --orange-fonce: #c47513;
+    --peche: #ffc0a7;
+    --peche-pale: #fad5c7;
+    --encre: #22303f;          /* texte foncé sur fond clair */
+    --blanc: #ffffff;
+    --creme: #fdf6f2;          /* fond clair des zones de lecture */
+
+    --police-titres: "Poppins", sans-serif;
+    --police-sous-titres: "Montserrat", sans-serif;
+    --police-texte: "Comfortaa", sans-serif;
+
+    /* Échelle typographique (mobile) */
+    --taille-h1: 1.75rem;
+    --taille-h2: 1.45rem;
+    --taille-h3: 1.1rem;
+    --taille-texte: 1rem;
+    --taille-petit: 0.85rem;
+
+    --rayon: 16px;
+    --espace-section: 3.5rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --taille-h1: 2.6rem;
+        --taille-h2: 1.9rem;
+        --taille-h3: 1.25rem;
+        --taille-texte: 1.06rem;
+        --espace-section: 5rem;
+    }
+}
+
+/* --- Base ------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: var(--bleu);
+    color: var(--blanc);
+    font-family: var(--police-texte);
+    font-size: var(--taille-texte);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+    font-family: var(--police-titres);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 1rem;
+}
+
+h1 {
+    font-size: var(--taille-h1);
+}
+
+h2 {
+    font-size: var(--taille-h2);
+}
+
+h3 {
+    font-family: var(--police-sous-titres);
+    font-weight: 600;
+    font-size: var(--taille-h3);
+    line-height: 1.35;
+    margin: 0 0 0.75rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+/* --- Conteneur --------------------------------------------------------- */
+
+.conteneur {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.conteneur--etroit {
+    max-width: 760px;
+}
+
+/* --- Boutons (orange = action) ----------------------------------------- */
+
+.bouton {
+    display: inline-block;
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--blanc);
+    background-color: var(--orange);
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 2rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.bouton:hover,
+.bouton:focus-visible {
+    background-color: var(--orange-fonce);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.bouton:focus-visible {
+    outline: 3px solid var(--peche);
+    outline-offset: 3px;
+}
+
+.bouton--large {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .bouton--large {
+        width: auto;
+        min-width: 320px;
+    }
+}
+
+.lien-discret {
+    color: var(--blanc);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: var(--taille-petit);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bouton {
+        transition: none;
+    }
+
+    .bouton:hover,
+    .bouton:focus-visible {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* --- En-tête ------------------------------------------------------------ */
+
+.entete {
+    padding: 1rem 0;
+}
+
+.entete .conteneur {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.entete__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.entete__nom {
+    font-family: var(--police-titres);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--blanc);
+    text-decoration: none;
+}
+
+/* --- Sections ----------------------------------------------------------- */
+
+.section {
+    padding: var(--espace-section) 0;
+}
+
+/* Zone de lecture claire posée sur le fond bleu */
+.section--claire {
+    background-color: var(--creme);
+    color: var(--encre);
+}
+
+.section--claire .lien-discret {
+    color: var(--bleu);
+}
+
+/* Bandeau bleu (texte blanc) */
+.section--bleue {
+    background-color: var(--bleu);
+    color: var(--blanc);
+}
+
+.surtitre {
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: var(--taille-petit);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--orange);
+    margin: 0 0 0.5rem;
+}
+
+.souligne-peche {
+    background-image: linear-gradient(transparent 62%, var(--peche-pale) 62%);
+    padding: 0 0.15em;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.hero {
+    padding: 2.5rem 0 var(--espace-section);
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 1.25rem;
+}
+
+.hero__sous-titre {
+    max-width: 640px;
+    margin: 0 auto 2rem;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding-top: 4rem;
+    }
+}
+
+/* --- Cartes et listes ----------------------------------------------------- */
+
+.carte {
+    background-color: var(--blanc);
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(20, 93, 160, 0.08);
+}
+
+.liste-symptomes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.liste-symptomes li {
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.liste-symptomes li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: var(--peche);
+}
+
+/* --- Portrait ------------------------------------------------------------- */
+
+.portrait {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.portrait__photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 4px solid var(--peche-pale);
+}
+
+@media (min-width: 768px) {
+    .portrait {
+        grid-template-columns: auto 1fr;
+        gap: 2.5rem;
+    }
+
+    .portrait__photo {
+        width: 190px;
+        height: 190px;
+        margin: 0;
+    }
+}
+
+/* --- Témoignages ----------------------------------------------------------- */
+
+.temoignages {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+}
+
+@media (min-width: 768px) {
+    .temoignages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.temoignage {
+    background-color: var(--blanc);
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    margin: 0;
+    border-left: 5px solid var(--peche);
+}
+
+.temoignage p {
+    font-style: normal;
+}
+
+.temoignage footer {
+    font-family: var(--police-sous-titres);
+    font-weight: 600;
+    color: var(--bleu);
+    margin-top: 0.75rem;
+}
+
+/* --- Appel final (entrée du parcours) -------------------------------------- */
+
+.appel-final {
+    text-align: center;
+}
+
+.appel-final h2 {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.appel-final .bouton {
+    margin-top: 1.5rem;
+}
+
+.appel-final__note {
+    font-size: var(--taille-petit);
+    opacity: 0.85;
+    margin-top: 1rem;
+}
+
+/* --- Pied de page ------------------------------------------------------------ */
+
+.pied {
+    background-color: var(--bleu-fonce);
+    padding: 2.5rem 0 2rem;
+    font-size: var(--taille-petit);
+}
+
+.pied__liens {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: center;
+}
+
+.pied__liens a {
+    color: var(--blanc);
+    text-decoration: none;
+}
+
+.pied__liens a:hover,
+.pied__liens a:focus-visible {
+    text-decoration: underline;
+}
+
+.pied__reseaux {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.pied__reseaux a {
+    color: var(--blanc);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.pied__copyright {
+    text-align: center;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* --- Animations (état initial géré en JS pour ne rien casser sans JS) -------- */
+
+.anim-apparition {
+    will-change: transform, opacity;
+}
