@@ -9,34 +9,35 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
 
     <header class="entete">
         <div class="conteneur">
-            <img src="../assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
-            <a href="../index.html" class="entete__nom">Maud Planner</a>
+            <img src="/assets/images/logo-maud-planner.webp" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="/" class="entete__nom">Maud Planner</a>
         </div>
     </header>
 
     <main>
         <section class="ecran">
             <div class="conteneur anim-ecran">
-                <p class="fil-parcours"><a href="../index.html">&larr; Revenir à l'accueil</a></p>
+                <p class="fil-parcours"><a href="/">&larr; Revenir à l'accueil</a></p>
                 <div class="ecran__question">
                     <p class="surtitre">Parcours d'orientation</p>
                     <h1>Préfères-tu avancer accompagné(e) ou en autonomie ?</h1>
                     <p>Les deux chemins se valent : choisis celui qui ressemble le plus à ta situation d'aujourd'hui.</p>
                 </div>
                 <div class="cartes-choix cartes-choix--deux">
-                    <a href="../orga-rescue.html?src=parcours" class="carte-choix">
+                    <a href="/orga-rescue?src=parcours" class="carte-choix">
                         <h2>Accompagné(e)</h2>
                         <p>Tu as besoin d'un cadre, d'un regard extérieur et d'un suivi dans la durée. Tu as déjà essayé des méthodes seul(e), sans que ça tienne sur la longueur.</p>
                     </a>
-                    <a href="test.html" class="carte-choix">
+                    <a href="/orientation/test" class="carte-choix">
                         <h2>En autonomie</h2>
                         <p>Tu avances bien avec de bons outils. Tu veux des solutions concrètes, à ton rythme et à petit prix.</p>
                     </a>
@@ -48,13 +49,13 @@
     <footer class="pied">
         <div class="conteneur">
             <ul class="pied__liens">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="index.html">Parcours d'orientation</a></li>
-                <li><a href="../orga-rescue.html">Orga Rescue</a></li>
-                <li><a href="../produits-digitaux.html">Produits digitaux</a></li>
-                <li><a href="../crash-test.html">Le Crash Test de ta journée</a></li>
-                <li><a href="../rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="../blog/">Blog</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/orientation/">Parcours d'orientation</a></li>
+                <li><a href="/orga-rescue">Orga Rescue</a></li>
+                <li><a href="/produits-digitaux">Produits digitaux</a></li>
+                <li><a href="/crash-test">Le Crash Test de ta journée</a></li>
+                <li><a href="/rdv">Prendre rendez-vous</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -66,7 +67,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-    <script src="../assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

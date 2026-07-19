@@ -8,23 +8,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
 
     <header class="entete">
         <div class="conteneur">
-            <img src="../assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
-            <a href="../index.html" class="entete__nom">Maud Planner</a>
+            <img src="/assets/images/logo-maud-planner.webp" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="/" class="entete__nom">Maud Planner</a>
         </div>
     </header>
 
     <main>
         <section class="ecran">
             <div class="conteneur anim-ecran">
-                <p class="fil-parcours"><a href="test.html">&larr; Changer de réponse</a></p>
+                <p class="fil-parcours"><a href="/orientation/test">&larr; Changer de réponse</a></p>
 
                 <div class="ecran__question">
                     <p class="surtitre">Ta recommandation</p>
@@ -32,32 +33,32 @@
                     <p id="resultat-bientot"><span class="pastille-bientot">Bientôt disponible</span></p>
                     <p id="resultat-promesse"></p>
                     <p id="resultat-attente">En attendant, tu peux faire le Crash Test de ta journée : un calculateur gratuit qui compare ce que tu as prévu au temps dont tu disposes vraiment.</p>
-                    <p><a href="../crash-test.html" class="bouton" id="resultat-cta">Faire le Crash Test gratuit</a></p>
+                    <p><a href="/crash-test" class="bouton" id="resultat-cta">Faire le Crash Test gratuit</a></p>
                 </div>
 
                 <noscript>
                     <div class="encart">
                         <h2>Voir les outils</h2>
                         <p>Pour découvrir l'outil recommandé et tous les autres, rends-toi sur la page des produits digitaux.</p>
-                        <p><a href="../produits-digitaux.html" class="bouton">Voir tous les outils</a></p>
+                        <p><a href="/produits-digitaux" class="bouton">Voir tous les outils</a></p>
                     </div>
                 </noscript>
 
                 <div class="encart" id="encart-bundle" hidden>
                     <h2>La boîte à outils complète</h2>
                     <p>Cet outil fait partie de la boîte à outils Maud Planner : un ensemble d'applications web pour t'organiser au quotidien. Le pack complet arrive bientôt.</p>
-                    <p><a href="../produits-digitaux.html">Découvrir la boîte à outils</a></p>
+                    <p><a href="/produits-digitaux">Découvrir la boîte à outils</a></p>
                 </div>
 
                 <div class="encart">
                     <h2>Envie d'aller plus loin, accompagné(e) ?</h2>
                     <p>Tous ces outils sont inclus dans l'accompagnement Orga Rescue.</p>
-                    <p><a href="../orga-rescue.html" class="bouton">Découvrir Orga Rescue</a></p>
+                    <p><a href="/orga-rescue" class="bouton">Découvrir Orga Rescue</a></p>
                 </div>
 
                 <div class="liens-secondaires">
-                    <a href="../produits-digitaux.html" class="lien-discret">Voir tous les outils</a>
-                    <a href="test.html" class="lien-discret">Refaire le test</a>
+                    <a href="/produits-digitaux" class="lien-discret">Voir tous les outils</a>
+                    <a href="/orientation/test" class="lien-discret">Refaire le test</a>
                 </div>
             </div>
         </section>
@@ -66,13 +67,13 @@
     <footer class="pied">
         <div class="conteneur">
             <ul class="pied__liens">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="index.html">Parcours d'orientation</a></li>
-                <li><a href="../orga-rescue.html">Orga Rescue</a></li>
-                <li><a href="../produits-digitaux.html">Produits digitaux</a></li>
-                <li><a href="../crash-test.html">Le Crash Test de ta journée</a></li>
-                <li><a href="../rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="../blog/">Blog</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/orientation/">Parcours d'orientation</a></li>
+                <li><a href="/orga-rescue">Orga Rescue</a></li>
+                <li><a href="/produits-digitaux">Produits digitaux</a></li>
+                <li><a href="/crash-test">Le Crash Test de ta journée</a></li>
+                <li><a href="/rdv">Prendre rendez-vous</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -132,7 +133,7 @@
             document.getElementById("resultat-attente").textContent = "Refais le test pour obtenir ta recommandation, ou découvre tous les outils via les liens ci-dessous.";
             var cta = document.getElementById("resultat-cta");
             cta.textContent = "Refaire le test";
-            cta.setAttribute("href", "test.html");
+            cta.setAttribute("href", "/orientation/test");
             return;
         }
 
@@ -152,7 +153,6 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-    <script src="../assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

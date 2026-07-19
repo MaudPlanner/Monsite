@@ -1,0 +1,22 @@
+# Domaine : rediriger maudplanner.netlify.app vers le domaine principal
+https://maudplanner.netlify.app/* https://www.maudplanner.com/:splat 301!
+http://maudplanner.netlify.app/*  https://www.maudplanner.com/:splat 301!
+
+# Anciennes URLs de la V1 (301 vers les nouvelles pages)
+/packs-sos.html   /produits-digitaux  301
+/packs-sos        /produits-digitaux  301
+/tarifs.html      /orga-rescue        301
+/tarifs           /orga-rescue        301
+/blog.html        /blog/              301
+
+# URLs canoniques : rediriger les .html vers les versions propres
+/index.html                 /                       301
+/orga-rescue.html           /orga-rescue            301
+/produits-digitaux.html     /produits-digitaux      301
+/crash-test.html            /crash-test             301
+/rdv.html                   /rdv                    301
+/orientation/index.html     /orientation/           301
+/orientation/test.html      /orientation/test       301
+/orientation/test-2.html    /orientation/test-2     301
+/orientation/resultat.html  /orientation/resultat   301
+/blog/index.html            /blog/                  301

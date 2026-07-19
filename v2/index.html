@@ -9,16 +9,51 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://www.maudplanner.com/#maud",
+                "name": "Maud",
+                "jobTitle": "Coach en organisation et gestion du temps",
+                "description": "Coach en organisation et gestion du temps pour entrepreneur(e)s débordé(e)s. Approche 100 % sur mesure, appuyée sur une licence de psychologie.",
+                "url": "https://www.maudplanner.com/",
+                "sameAs": [
+                    "https://www.instagram.com/maud.planner/",
+                    "https://www.facebook.com/profile.php?id=61569983277664",
+                    "https://www.linkedin.com/in/maudplanner-amazingplanning"
+                ]
+            },
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://www.maudplanner.com/#service",
+                "name": "Maud Planner",
+                "description": "Coaching en organisation et gestion du temps pour entrepreneur(e)s : accompagnement sur mesure Orga Rescue et outils digitaux.",
+                "url": "https://www.maudplanner.com/",
+                "founder": { "@id": "https://www.maudplanner.com/#maud" },
+                "sameAs": [
+                    "https://www.instagram.com/maud.planner/",
+                    "https://www.facebook.com/profile.php?id=61569983277664",
+                    "https://www.linkedin.com/in/maudplanner-amazingplanning"
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
 
     <header class="entete">
         <div class="conteneur">
-            <img src="assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
-            <a href="index.html" class="entete__nom">Maud Planner</a>
+            <img src="/assets/images/logo-maud-planner.webp" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="/" class="entete__nom">Maud Planner</a>
         </div>
     </header>
 
@@ -29,7 +64,7 @@
             <div class="conteneur conteneur--etroit">
                 <h1 class="anim-hero">Savoir quoi faire en premier chaque matin. Et t'arrêter le soir sans culpabiliser.</h1>
                 <p class="hero__sous-titre anim-hero">Coach en organisation et gestion du temps pour entrepreneur(e)s débordé(e)s. J'aide celles et ceux qui jonglent entre clients, famille et plusieurs projets à reprendre la main sur leur temps, sans injonctions, ni pression, ni méthode miracle.</p>
-                <p class="anim-hero"><a href="orientation/index.html" class="bouton bouton--large">Commencer le parcours immersif</a></p>
+                <p class="anim-hero"><a href="/orientation/" class="bouton bouton--large">Commencer le parcours immersif</a></p>
             </div>
         </section>
 
@@ -37,7 +72,7 @@
         <section class="section section--claire">
             <div class="conteneur">
                 <div class="portrait anim-apparition">
-                    <img src="assets/images/profile-icon.png" alt="Portrait de Maud, coach en organisation et gestion du temps" class="portrait__photo" width="190" height="190" loading="lazy">
+                    <img src="/assets/images/profile-icon.webp" alt="Portrait de Maud, coach en organisation et gestion du temps" class="portrait__photo" width="190" height="190" loading="lazy">
                     <div>
                         <p class="surtitre">Qui je suis</p>
                         <h2>Je suis Maud</h2>
@@ -120,7 +155,7 @@
             <div class="conteneur conteneur--etroit anim-apparition">
                 <h2>Par où commencer ? Laisse-toi guider.</h2>
                 <p>En quelques questions, le parcours t'oriente vers l'accompagnement ou l'outil qui correspond à ta situation d'aujourd'hui.</p>
-                <a href="orientation/index.html" class="bouton bouton--large">Commencer le parcours immersif</a>
+                <a href="/orientation/" class="bouton bouton--large">Commencer le parcours immersif</a>
                 <p class="appel-final__note">Moins d'une minute, sans engagement.</p>
             </div>
         </section>
@@ -130,13 +165,13 @@
     <footer class="pied">
         <div class="conteneur">
             <ul class="pied__liens">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="orientation/index.html">Parcours d'orientation</a></li>
-                <li><a href="orga-rescue.html">Orga Rescue</a></li>
-                <li><a href="produits-digitaux.html">Produits digitaux</a></li>
-                <li><a href="crash-test.html">Le Crash Test de ta journée</a></li>
-                <li><a href="rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/orientation/">Parcours d'orientation</a></li>
+                <li><a href="/orga-rescue">Orga Rescue</a></li>
+                <li><a href="/produits-digitaux">Produits digitaux</a></li>
+                <li><a href="/crash-test">Le Crash Test de ta journée</a></li>
+                <li><a href="/rdv">Prendre rendez-vous</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -148,7 +183,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

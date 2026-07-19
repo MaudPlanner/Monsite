@@ -9,16 +9,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
 
     <header class="entete">
         <div class="conteneur">
-            <img src="assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
-            <a href="index.html" class="entete__nom">Maud Planner</a>
+            <img src="/assets/images/logo-maud-planner.webp" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="/" class="entete__nom">Maud Planner</a>
         </div>
     </header>
 
@@ -27,13 +28,13 @@
         <!-- Hero -->
         <section class="hero">
             <div class="conteneur conteneur--etroit">
-                <p class="fil-parcours" id="fil-parcours" hidden><a href="orientation/index.html">&larr; Changer de réponse</a></p>
+                <p class="fil-parcours" id="fil-parcours" hidden><a href="/orientation/">&larr; Changer de réponse</a></p>
                 <p class="surtitre anim-hero">L'accompagnement</p>
                 <h1 class="anim-hero">Orga Rescue : 12 mois pour construire une organisation qui te ressemble</h1>
                 <div class="a-venir anim-hero">
                     <p>Introduction de la page : la promesse d'Orga Rescue, à qui il s'adresse, ce qui le rend différent. Texte rédigé par Maud, intégré tel quel.</p>
                 </div>
-                <p class="anim-hero"><a href="rdv.html" class="bouton bouton--large">Réserver un appel découverte</a></p>
+                <p class="anim-hero"><a href="/rdv" class="bouton bouton--large">Réserver un appel découverte</a></p>
             </div>
         </section>
 
@@ -110,8 +111,8 @@
             <div class="conteneur conteneur--etroit anim-apparition">
                 <h2>On en parle de vive voix ?</h2>
                 <p>L'appel découverte est gratuit et sans engagement : on fait le point sur ta situation, je te présente le déroulé et les modalités, et tu décides ensuite, tranquillement.</p>
-                <a href="rdv.html" class="bouton bouton--large">Réserver un appel découverte</a>
-                <p class="appel-final__note"><a href="orientation/index.html" class="lien-discret">Pas sûr(e) que ce soit la bonne formule ? Faire le parcours d'orientation</a></p>
+                <a href="/rdv" class="bouton bouton--large">Réserver un appel découverte</a>
+                <p class="appel-final__note"><a href="/orientation/" class="lien-discret">Pas sûr(e) que ce soit la bonne formule ? Faire le parcours d'orientation</a></p>
             </div>
         </section>
 
@@ -120,13 +121,13 @@
     <footer class="pied">
         <div class="conteneur">
             <ul class="pied__liens">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="orientation/index.html">Parcours d'orientation</a></li>
-                <li><a href="orga-rescue.html">Orga Rescue</a></li>
-                <li><a href="produits-digitaux.html">Produits digitaux</a></li>
-                <li><a href="crash-test.html">Le Crash Test de ta journée</a></li>
-                <li><a href="rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/orientation/">Parcours d'orientation</a></li>
+                <li><a href="/orga-rescue">Orga Rescue</a></li>
+                <li><a href="/produits-digitaux">Produits digitaux</a></li>
+                <li><a href="/crash-test">Le Crash Test de ta journée</a></li>
+                <li><a href="/rdv">Prendre rendez-vous</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -145,7 +146,6 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

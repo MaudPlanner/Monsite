@@ -13,6 +13,7 @@
     --orange-fonce: #c47513;
     --peche: #ffc0a7;
     --peche-pale: #fad5c7;
+    --orange-texte: #a05500;   /* orange foncé lisible sur fond clair (AA) */
     --encre: #22303f;          /* texte foncé sur fond clair */
     --blanc: #ffffff;
     --creme: #fdf6f2;          /* fond clair des zones de lecture */
@@ -128,7 +129,7 @@ a {
     font-family: var(--police-sous-titres);
     font-weight: 700;
     font-size: 1rem;
-    color: var(--blanc);
+    color: var(--encre);
     background-color: var(--orange);
     border: none;
     border-radius: 999px;
@@ -141,7 +142,7 @@ a {
 
 .bouton:hover,
 .bouton:focus-visible {
-    background-color: var(--orange-fonce);
+    background-color: #e89b3d;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
@@ -235,8 +236,12 @@ a {
     font-size: var(--taille-petit);
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--orange);
+    color: var(--peche-pale);
     margin: 0 0 0.5rem;
+}
+
+.section--claire .surtitre {
+    color: var(--orange-texte);
 }
 
 .souligne-peche {
@@ -615,8 +620,13 @@ a {
     font-weight: 700;
     font-size: var(--taille-petit);
     letter-spacing: 0.08em;
-    color: var(--orange);
+    color: var(--orange-texte);
     margin-bottom: 0.5rem;
+}
+
+.hero .a-venir::before,
+.section--bleue .a-venir::before {
+    color: var(--peche-pale);
 }
 
 .a-venir p:last-child {
@@ -771,7 +781,7 @@ a {
     font-family: var(--police-sous-titres);
     font-weight: 700;
     font-size: var(--taille-petit);
-    color: var(--blanc);
+    color: var(--encre);
     background-color: var(--orange);
     border-radius: 999px;
     padding: 0.4rem 1.1rem;

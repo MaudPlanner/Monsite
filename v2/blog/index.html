@@ -9,16 +9,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
 
     <header class="entete">
         <div class="conteneur">
-            <img src="../assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
-            <a href="../index.html" class="entete__nom">Maud Planner</a>
+            <img src="/assets/images/logo-maud-planner.webp" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="/" class="entete__nom">Maud Planner</a>
         </div>
     </header>
 
@@ -45,7 +46,7 @@
                 Voir blog/AJOUTER-UN-ARTICLE.md pour le mode d'emploi complet.
 
                 <div class="articles-liste">
-                    <a href="slug-de-l-article.html" class="carte-article">
+                    <a href="/blog/slug-de-l-article" class="carte-article">
                         <time datetime="2026-01-01">1 janvier 2026</time>
                         <h3>Titre de l'article</h3>
                         <p>Résumé de l'article en une ou deux phrases.</p>
@@ -57,7 +58,7 @@
                 <div class="etat-vide anim-apparition">
                     <h3>Les premiers articles sont en préparation</h3>
                     <p>En attendant, tu peux faire le Crash Test gratuit de ta journée : un calculateur qui compare les tâches que tu as prévues au temps dont tu disposes vraiment.</p>
-                    <p><a href="../crash-test.html" class="bouton">Faire le Crash Test gratuit</a></p>
+                    <p><a href="/crash-test" class="bouton">Faire le Crash Test gratuit</a></p>
                 </div>
             </div>
         </section>
@@ -67,7 +68,7 @@
             <div class="conteneur conteneur--etroit anim-apparition">
                 <h2>Besoin de plus qu'un article ?</h2>
                 <p>Le parcours d'orientation t'aide à trouver l'outil ou l'accompagnement adapté à ta situation, en quelques questions.</p>
-                <a href="../orientation/index.html" class="bouton bouton--large">Faire le parcours d'orientation</a>
+                <a href="/orientation/" class="bouton bouton--large">Faire le parcours d'orientation</a>
             </div>
         </section>
 
@@ -76,13 +77,13 @@
     <footer class="pied">
         <div class="conteneur">
             <ul class="pied__liens">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../orientation/index.html">Parcours d'orientation</a></li>
-                <li><a href="../orga-rescue.html">Orga Rescue</a></li>
-                <li><a href="../produits-digitaux.html">Produits digitaux</a></li>
-                <li><a href="../crash-test.html">Le Crash Test de ta journée</a></li>
-                <li><a href="../rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="index.html">Blog</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/orientation/">Parcours d'orientation</a></li>
+                <li><a href="/orga-rescue">Orga Rescue</a></li>
+                <li><a href="/produits-digitaux">Produits digitaux</a></li>
+                <li><a href="/crash-test">Le Crash Test de ta journée</a></li>
+                <li><a href="/rdv">Prendre rendez-vous</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -94,7 +95,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-    <script src="../assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

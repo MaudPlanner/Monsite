@@ -8,41 +8,42 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media=&#39;all&#39;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 <body>
 
     <header class="entete">
         <div class="conteneur">
-            <img src="../assets/images/logo-maud-planner.png" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
-            <a href="../index.html" class="entete__nom">Maud Planner</a>
+            <img src="/assets/images/logo-maud-planner.webp" alt="Logo Maud Planner" class="entete__logo" width="48" height="48">
+            <a href="/" class="entete__nom">Maud Planner</a>
         </div>
     </header>
 
     <main>
         <section class="ecran">
             <div class="conteneur anim-ecran">
-                <p class="fil-parcours"><a href="index.html">&larr; Changer de réponse</a></p>
+                <p class="fil-parcours"><a href="/orientation/">&larr; Changer de réponse</a></p>
                 <div class="ecran__question">
                     <p class="surtitre">En autonomie</p>
                     <h1>Qu'est-ce qui te pèse le plus en ce moment ?</h1>
                 </div>
                 <div class="cartes-choix">
-                    <a href="resultat.html?p=tue-ta-liste" class="carte-choix carte-choix--reponse">
+                    <a href="/orientation/resultat?p=tue-ta-liste" class="carte-choix carte-choix--reponse">
                         <p>Ma to-do déborde, je ne sais pas quoi faire en premier</p>
                     </a>
-                    <a href="resultat.html?p=ta-coach-dans-ta-poche" class="carte-choix carte-choix--reponse">
+                    <a href="/orientation/resultat?p=ta-coach-dans-ta-poche" class="carte-choix carte-choix--reponse">
                         <p>Je repousse tout, je procrastine</p>
                     </a>
-                    <a href="resultat.html?p=planificateur-semaine-realiste" class="carte-choix carte-choix--reponse">
+                    <a href="/orientation/resultat?p=planificateur-semaine-realiste" class="carte-choix carte-choix--reponse">
                         <p>Mes semaines sont irréalistes, je prévois toujours trop</p>
                     </a>
-                    <a href="resultat.html?p=degonfle-ton-edito" class="carte-choix carte-choix--reponse">
+                    <a href="/orientation/resultat?p=degonfle-ton-edito" class="carte-choix carte-choix--reponse">
                         <p>Mon contenu et mes réseaux me prennent un temps fou</p>
                     </a>
-                    <a href="test-2.html" class="carte-choix carte-choix--reponse">
+                    <a href="/orientation/test-2" class="carte-choix carte-choix--reponse">
                         <p>La charge mentale de la maison et de la famille</p>
                     </a>
                 </div>
@@ -53,13 +54,13 @@
     <footer class="pied">
         <div class="conteneur">
             <ul class="pied__liens">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="index.html">Parcours d'orientation</a></li>
-                <li><a href="../orga-rescue.html">Orga Rescue</a></li>
-                <li><a href="../produits-digitaux.html">Produits digitaux</a></li>
-                <li><a href="../crash-test.html">Le Crash Test de ta journée</a></li>
-                <li><a href="../rdv.html">Prendre rendez-vous</a></li>
-                <li><a href="../blog/">Blog</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/orientation/">Parcours d'orientation</a></li>
+                <li><a href="/orga-rescue">Orga Rescue</a></li>
+                <li><a href="/produits-digitaux">Produits digitaux</a></li>
+                <li><a href="/crash-test">Le Crash Test de ta journée</a></li>
+                <li><a href="/rdv">Prendre rendez-vous</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
             <div class="pied__reseaux">
                 <a href="https://www.instagram.com/maud.planner/" target="_blank" rel="noopener">Instagram</a>
@@ -71,7 +72,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-    <script src="../assets/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
