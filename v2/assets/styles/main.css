@@ -594,6 +594,125 @@ a {
     gap: 1rem 2rem;
 }
 
+/* --- Blocs [TEXTE À VENIR] --------------------------------------------------
+   Blocs de substitution en attendant les textes rédigés par Maud.
+   Volontairement très visibles pour ne pas partir en ligne par accident. */
+
+.a-venir {
+    border: 2px dashed var(--orange);
+    border-radius: var(--rayon);
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 1rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.a-venir::before {
+    content: "[TEXTE À VENIR]";
+    display: block;
+    font-family: var(--police-sous-titres);
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--taille-petit);
+    letter-spacing: 0.08em;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+}
+
+.a-venir p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Page Orga Rescue --------------------------------------------------------- */
+
+.phases {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .phases {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.phase {
+    background-color: var(--blanc);
+    border-radius: var(--rayon);
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 16px rgba(20, 93, 160, 0.08);
+}
+
+.phase__badge {
+    display: inline-block;
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: var(--taille-petit);
+    color: var(--encre);
+    background-color: var(--peche-pale);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    margin-bottom: 0.85rem;
+}
+
+.phase h3 {
+    color: var(--bleu);
+}
+
+.phase ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.phase ul li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.95rem;
+}
+
+.phase ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background-color: var(--peche);
+}
+
+.pour-qui {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .pour-qui {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.pour-qui__carte {
+    background-color: var(--blanc);
+    color: var(--encre);
+    border-radius: var(--rayon);
+    padding: 1.75rem 1.5rem;
+    border-top: 5px solid var(--peche);
+}
+
+.pour-qui__carte--non {
+    border-top-color: var(--bleu);
+}
+
+.pour-qui__carte h3 {
+    color: var(--bleu);
+}
+
 /* --- Pages provisoires ------------------------------------------------------ */
 
 .page-provisoire {
