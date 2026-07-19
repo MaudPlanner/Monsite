@@ -431,6 +431,181 @@ a {
     margin: 0;
 }
 
+/* --- Parcours d'orientation ---------------------------------------------- */
+
+.ecran {
+    padding: 2rem 0 var(--espace-section);
+    text-align: center;
+}
+
+.ecran__question {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fil-parcours {
+    font-family: var(--police-sous-titres);
+    font-size: var(--taille-petit);
+    margin-bottom: 2rem;
+}
+
+.fil-parcours a {
+    color: var(--blanc);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    opacity: 0.85;
+}
+
+.fil-parcours a:hover,
+.fil-parcours a:focus-visible {
+    opacity: 1;
+}
+
+.fil-parcours--clair a {
+    color: var(--bleu);
+    opacity: 1;
+}
+
+.cartes-choix {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem auto 0;
+    max-width: 760px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .cartes-choix--deux {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.carte-choix {
+    display: block;
+    background-color: var(--blanc);
+    color: var(--encre);
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.carte-choix:hover,
+.carte-choix:focus-visible {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+}
+
+.carte-choix:focus-visible {
+    outline: 3px solid var(--peche);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carte-choix {
+        transition: none;
+    }
+
+    .carte-choix:hover,
+    .carte-choix:focus-visible {
+        transform: none;
+    }
+}
+
+.carte-choix h2,
+.carte-choix h3 {
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--bleu);
+    margin-bottom: 0.5rem;
+}
+
+.carte-choix p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.carte-choix--reponse {
+    padding: 1.15rem 1.5rem;
+}
+
+.carte-choix--reponse p {
+    font-family: var(--police-sous-titres);
+    font-weight: 600;
+    color: var(--encre);
+}
+
+/* --- Écran résultat -------------------------------------------------------- */
+
+.pastille-bientot {
+    display: inline-block;
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: var(--taille-petit);
+    color: var(--encre);
+    background-color: var(--peche-pale);
+    border-radius: 999px;
+    padding: 0.4rem 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.encart {
+    background-color: var(--blanc);
+    color: var(--encre);
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+    margin: 1.25rem auto 0;
+    max-width: 620px;
+    text-align: left;
+}
+
+.encart h2,
+.encart h3 {
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--bleu);
+    margin-bottom: 0.5rem;
+}
+
+.encart p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.encart p:last-child {
+    margin-bottom: 0;
+}
+
+.encart .bouton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.liens-secondaires {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+}
+
+/* --- Pages provisoires ------------------------------------------------------ */
+
+.page-provisoire {
+    padding: var(--espace-section) 0;
+    text-align: center;
+    min-height: 45vh;
+}
+
+.page-provisoire .bouton {
+    margin-top: 1rem;
+}
+
 /* --- Animations (état initial géré en JS pour ne rien casser sans JS) -------- */
 
 .anim-apparition {

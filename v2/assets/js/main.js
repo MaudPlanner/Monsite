@@ -10,6 +10,16 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
+    /* Écrans du parcours : transition courte à l'arrivée (300 ms max) */
+    if (document.querySelector(".anim-ecran")) {
+        gsap.from(".anim-ecran", {
+            opacity: 0,
+            y: 16,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    }
+
     /* Hero : apparition douce à l'arrivée sur la page */
     gsap.from(".hero .anim-hero", {
         opacity: 0,
