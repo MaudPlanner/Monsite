@@ -764,6 +764,25 @@ a {
     color: var(--orange-texte);
 }
 
+.produit-carte__prix {
+    font-family: var(--police-titres);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--bleu);
+    margin: 0.25rem 0 0.75rem;
+}
+
+.produit-carte--bundle .produit-carte__prix {
+    font-size: 1.9rem;
+}
+
+.prix-resultat {
+    font-family: var(--police-titres);
+    font-weight: 700;
+    font-size: 1.9rem;
+    margin: 0.5rem 0 1rem;
+}
+
 .produit-carte p {
     font-size: 0.95rem;
     margin-bottom: 0.5rem;

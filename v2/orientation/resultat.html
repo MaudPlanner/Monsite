@@ -30,6 +30,7 @@
                 <div class="ecran__question">
                     <p class="surtitre">Ta recommandation</p>
                     <h1 id="resultat-nom">Ton outil recommandé</h1>
+                    <p class="prix-resultat" id="resultat-prix" hidden></p>
                     <p id="resultat-bientot"><span class="pastille-bientot">Bientôt disponible</span></p>
                     <p id="resultat-promesse"></p>
                     <p id="resultat-attente">En attendant, tu peux faire le Crash Test de ta journée : un calculateur gratuit qui compare ce que tu as prévu au temps dont tu disposes vraiment.</p>
@@ -45,7 +46,7 @@
                 </noscript>
 
                 <div class="encart" id="encart-bundle" hidden>
-                    <h2>La Boîte à Outils de Maud Planner</h2>
+                    <h2>La Boîte à Outils de Maud Planner &mdash; 97 €</h2>
                     <p>Cet outil fait partie de la Boîte à Outils : tu peux le prendre seul, ou choisir la boîte complète en un seul achat.</p>
                     <p><a href="/produits-digitaux">Découvrir la Boîte à Outils</a></p>
                 </div>
@@ -94,31 +95,37 @@
             "tue-ta-liste": {
                 nom: "Tue ta liste",
                 promesse: "Commence chaque journée en sachant exactement quoi faire en premier.",
+                prix: "27 €",
                 boiteAOutils: true
             },
             "ta-coach-dans-ta-poche": {
                 nom: "Ta Coach Dans Ta Poche",
                 promesse: "10 minutes de coaching audio pour débloquer ce qui te bloque.",
+                prix: "",
                 boiteAOutils: false
             },
             "planificateur-semaine-realiste": {
                 nom: "Le Planificateur de Semaine Réaliste",
                 promesse: "Une semaine que tu peux vivre, pas une semaine de robot.",
+                prix: "27 €",
                 boiteAOutils: true
             },
             "degonfle-ton-edito": {
                 nom: "Dégonfle ton édito",
                 promesse: "Un rythme de contenu que tu peux tenir, calculé sur ton temps réel.",
+                prix: "27 €",
                 boiteAOutils: true
             },
             "planificateur-menus": {
                 nom: "Le Planificateur de Menus qui Décide pour Toi",
                 promesse: "Plus jamais « on mange quoi ce soir ? »",
+                prix: "27 €",
                 boiteAOutils: true
             },
             "todo-evenements": {
                 nom: "La To-do des Events qui Débordent",
                 promesse: "La rentrée, Noël, les vacances : tout est listé, daté, et sorti de ta tête.",
+                prix: "27 €",
                 boiteAOutils: true
             }
         };
@@ -139,6 +146,13 @@
 
         document.title = produit.nom + " - Parcours d'orientation | Maud Planner";
         document.getElementById("resultat-nom").textContent = produit.nom;
+
+        /* Prix affiché seulement s'il est connu : jamais de prix inventé. */
+        if (produit.prix) {
+            var prix = document.getElementById("resultat-prix");
+            prix.textContent = produit.prix;
+            prix.hidden = false;
+        }
 
         if (produit.promesse) {
             document.getElementById("resultat-promesse").textContent = produit.promesse;
