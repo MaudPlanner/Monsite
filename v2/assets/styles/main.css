@@ -780,7 +780,58 @@ a {
     font-family: var(--police-titres);
     font-weight: 700;
     font-size: 1.9rem;
-    margin: 0.5rem 0 1rem;
+    margin: 0.5rem 0 0.25rem;
+}
+
+.prix-resultat__note {
+    font-size: var(--taille-petit);
+    opacity: 0.9;
+    margin: 0 0 1rem;
+}
+
+/* Formules de prix multiples (ex. immersions 15 ou 30 jours) */
+.formules {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0.75rem 0 1rem;
+}
+
+@media (min-width: 480px) {
+    .formules {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.formule {
+    background-color: var(--creme);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+}
+
+.formule__duree {
+    display: block;
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    font-size: var(--taille-petit);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--orange-texte);
+}
+
+.formule__prix {
+    display: block;
+    font-family: var(--police-titres);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--bleu);
+    line-height: 1.3;
+}
+
+.formule__note {
+    display: block;
+    font-size: var(--taille-petit);
+    color: var(--encre);
+    opacity: 0.8;
 }
 
 .produit-carte p {
