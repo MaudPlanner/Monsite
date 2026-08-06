@@ -646,6 +646,9 @@ a {
 @media (min-width: 768px) {
     .phases {
         grid-template-columns: repeat(2, 1fr);
+        /* Chaque carte prend sa hauteur naturelle : la plus courte
+           n'est pas étirée avec du vide en bas. */
+        align-items: start;
     }
 }
 
