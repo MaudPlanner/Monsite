@@ -275,6 +275,7 @@ a {
 
 .carte {
     background-color: var(--blanc);
+    color: var(--encre);
     border-radius: var(--rayon);
     padding: 1.5rem;
     box-shadow: 0 4px 16px rgba(20, 93, 160, 0.08);
@@ -350,6 +351,7 @@ a {
 
 .temoignage {
     background-color: var(--blanc);
+    color: var(--encre);
     border-radius: var(--rayon);
     padding: 1.5rem;
     margin: 0;
@@ -649,6 +651,7 @@ a {
 
 .phase {
     background-color: var(--blanc);
+    color: var(--encre);
     border-radius: var(--rayon);
     padding: 1.75rem 1.5rem;
     box-shadow: 0 4px 16px rgba(20, 93, 160, 0.08);
@@ -673,7 +676,7 @@ a {
 .phase ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 1rem;
     display: grid;
     gap: 0.6rem;
 }
