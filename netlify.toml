@@ -1,12 +1,9 @@
 # Configuration Netlify
-# La production (branche master) continue de servir la V1 à la racine.
-# La branche refonte-site et ses deploy previews servent directement la V2.
-# Au moment de la mise en ligne de la V2 : passer publish à "v2" dans [build].
+# La production (branche master) sert la V2, mise en ligne le 08/08/2026.
+# Les anciens fichiers V1 restent dans le dépôt (racine) mais ne sont plus
+# publiés : Netlify ne sert que le contenu du dossier "v2".
 
 [build]
-  publish = "."
-
-[context.refonte-site]
   publish = "v2"
 
 [context.deploy-preview]
