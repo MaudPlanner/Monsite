@@ -1,9 +1,7 @@
-# Domaine : la redirection maudplanner.netlify.app -> www.maudplanner.com
-# est désactivée tant que le domaine n'est pas branché sur ce site dans
-# Netlify (sinon elle casse l'accès en pointant vers un domaine non
-# configuré). À réactiver une fois le domaine confirmé fonctionnel :
-# https://maudplanner.netlify.app/* https://www.maudplanner.com/:splat 301!
-# http://maudplanner.netlify.app/*  https://www.maudplanner.com/:splat 301!
+# Domaine : maudplanner.com est branché et fonctionnel (12/08/2026),
+# la redirection est réactivée.
+https://maudplanner.netlify.app/* https://www.maudplanner.com/:splat 301!
+http://maudplanner.netlify.app/*  https://www.maudplanner.com/:splat 301!
 
 # Anciennes URLs de la V1 (301 vers les nouvelles pages)
 /packs-sos.html   /produits-digitaux  301
