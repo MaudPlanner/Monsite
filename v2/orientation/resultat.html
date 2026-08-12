@@ -109,6 +109,7 @@
                 promesse: "10 minutes de coaching audio pour débloquer ce qui te bloque.",
                 prix: "84 € les 30 jours",
                 prixNote: "au lieu de 94 € en prenant deux fois 15 jours. Tu préfères commencer plus petit ? La formule 15 jours est à 47 €.",
+                lien: "https://tcdtp-procrastination.maudplanner.com/",
                 boiteAOutils: false
             },
             "planificateur-semaine-realiste": {
@@ -175,6 +176,18 @@
 
         if (produit.boiteAOutils) {
             document.getElementById("encart-bundle").hidden = false;
+        }
+
+        /* Produit réellement disponible à l'achat : on remplace le CTA
+           de repli (Crash Test) par un lien direct vers sa page de vente. */
+        if (produit.lien) {
+            document.getElementById("resultat-bientot").hidden = true;
+            document.getElementById("resultat-attente").hidden = true;
+            var cta = document.getElementById("resultat-cta");
+            cta.textContent = "Découvrir " + produit.nom;
+            cta.setAttribute("href", produit.lien);
+            cta.setAttribute("target", "_blank");
+            cta.setAttribute("rel", "noopener");
         }
     })();
     </script>
