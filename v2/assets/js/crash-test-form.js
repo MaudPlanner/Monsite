@@ -73,11 +73,16 @@
             })
             .then(function () {
                 afficherMessage("C'est parti, tu es redirigé(e) vers l'outil...", "succes");
-                // L'email part dans le fragment (#), jamais en paramètre de
-                // requête : un fragment n'est jamais transmis à un serveur
-                // (ni logs, ni en-tête Referer), contrairement à un "?...".
-                // L'outil le lit une fois puis nettoie l'URL.
-                window.location.href = URL_OUTIL + "#e=" + encodeURIComponent(email);
+                // Email (+ prénom s'il est renseigné) dans le fragment (#),
+                // jamais en paramètre de requête : un fragment n'est jamais
+                // transmis à un serveur (ni logs, ni en-tête Referer),
+                // contrairement à un "?...". L'outil le lit une fois puis
+                // nettoie l'URL.
+                var fragment = "#e=" + encodeURIComponent(email);
+                if (prenom) {
+                    fragment += "&p=" + encodeURIComponent(prenom);
+                }
+                window.location.href = URL_OUTIL + fragment;
             })
             .catch(function (erreur) {
                 bouton.disabled = false;
