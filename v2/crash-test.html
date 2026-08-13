@@ -36,8 +36,28 @@
             <div class="conteneur conteneur--etroit anim-apparition">
                 <p class="surtitre">Fais le test</p>
                 <h2>Reçois ton Crash Test</h2>
-                <div class="a-venir">
-                    <p>Emplacement du formulaire de capture email. Systeme.io est en cours d'abandon : la solution retenue (Brevo, via formulaire intégré ou fonction Netlify) reste à confirmer par Maud. Aucun faux formulaire en attendant.</p>
+                <div class="encart">
+                    <form class="form-crash-test" id="form-crash-test" novalidate>
+                        <div class="form-crash-test__champ">
+                            <label for="crash-test-prenom">Prénom <span class="form-crash-test__optionnel">(optionnel)</span></label>
+                            <input type="text" id="crash-test-prenom" name="prenom" autocomplete="given-name">
+                        </div>
+
+                        <div class="form-crash-test__champ">
+                            <label for="crash-test-email">Email</label>
+                            <input type="email" id="crash-test-email" name="email" autocomplete="email" required aria-required="true">
+                        </div>
+
+                        <div class="form-crash-test__leurre" aria-hidden="true">
+                            <input type="text" name="site_web" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="bouton bouton--large">Recevoir mon accès au Crash Test</button>
+
+                        <p class="form-crash-test__message" id="form-crash-test-message" role="alert" aria-live="polite"></p>
+
+                        <p class="form-crash-test__mention">En validant, tu acceptes de recevoir un email avec le lien vers l'outil. Voir notre <a href="/politique-de-confidentialite">politique de confidentialité</a>.</p>
+                    </form>
                 </div>
             </div>
         </section>
@@ -80,5 +100,6 @@
 
     <script src="/assets/js/vendor/gsap.min.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/crash-test-form.js" defer></script>
 </body>
 </html>
