@@ -1,8 +1,9 @@
 /* Maud Planner V2 — formulaire de capture email du Crash Test.
-   Envoie la demande à la fonction Netlify qui inscrit la visiteuse dans
-   Brevo, puis redirige vers l'outil. Sans JS, le formulaire reste
-   visible mais ne peut pas être soumis : l'outil lui-même est une
-   application qui nécessite déjà JavaScript pour fonctionner. */
+   Envoie la demande à la fonction Netlify qui envoie l'email d'accès à
+   l'outil (via Resend), puis redirige vers l'outil. Sans JS, le
+   formulaire reste visible mais ne peut pas être soumis : l'outil
+   lui-même est une application qui nécessite déjà JavaScript pour
+   fonctionner. */
 
 (function () {
     var formulaire = document.getElementById("form-crash-test");
@@ -28,7 +29,6 @@
 
         var email = formulaire.email.value.trim();
         var prenom = formulaire.prenom.value.trim();
-        var newsletter = formulaire.newsletter.checked;
         var leurre = formulaire.site_web.value.trim();
 
         // Honeypot : une visiteuse ne remplit jamais ce champ, un robot si.
@@ -45,13 +45,12 @@
         bouton.disabled = true;
         bouton.textContent = "Ça part...";
 
-        fetch("/.netlify/functions/brevo-inscription", {
+        fetch("/.netlify/functions/crash-test-inscription", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 email: email,
                 prenom: prenom,
-                newsletter: newsletter,
                 site_web: leurre
             })
         })

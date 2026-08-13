@@ -8,8 +8,8 @@
 
 [build.environment]
   # Node 18+ pour disposer de fetch() nativement dans les fonctions
-  # (fonction Brevo : netlify/functions/brevo-inscription.js), sans
-  # dépendance npm à installer.
+  # (netlify/functions/crash-test-inscription.js, appelle l'API Resend),
+  # sans dépendance npm à installer.
   NODE_VERSION = "20"
 
 [functions]
