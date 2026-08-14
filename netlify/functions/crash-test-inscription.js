@@ -1,13 +1,12 @@
 /* Envoie l'email de confirmation avec le lien vers l'outil du Crash Test,
    via Resend (déjà utilisé par Maud pour les emails de connexion/accès
-   de ses autres produits).
+   de ses autres produits). Cet envoi est systématique.
 
-   L'inscription à une liste de diffusion (Brevo, newsletter) n'est PAS
-   encore branchée : Maud n'a pas encore de compte Brevo (décidé le
-   13/08/2026, voir mémoire "Intégration Brevo Monsite"). Cette fonction
-   se contente d'envoyer l'email d'accès ; aucune adresse n'est conservée
-   dans une liste pour l'instant, seulement dans l'historique d'envoi
-   Resend. À enrichir plus tard pour ajouter aussi le contact à Brevo.
+   Si la case newsletter est cochée, ajoute aussi la contact à la liste
+   Brevo "Newsletter Maud Planner" (finalité RGPD distincte de l'accès à
+   l'outil, voir v2/politique-de-confidentialite.html article 4-5).
+   L'ajout à Brevo est best-effort : s'il échoue, la visiteuse reçoit
+   quand même son accès à l'outil, on ne bloque jamais là-dessus.
 
    Variables d'environnement requises (Netlify → Site configuration →
    Environment variables — jamais commitées dans le dépôt) :
@@ -15,6 +14,8 @@
      RESEND_SENDER_EMAIL  adresse expéditrice, validée dans Resend
      RESEND_SENDER_NAME   nom affiché de l'expéditrice (optionnel,
                            "Maud Planner" par défaut)
+     BREVO_API_KEY        clé API Brevo (newsletter uniquement)
+     BREVO_LIST_ID        ID de la liste Brevo "Newsletter Maud Planner"
 */
 
 const URL_OUTIL = "https://crash-test-de-ta-journee.netlify.app";
@@ -34,6 +35,7 @@ exports.handler = async function (event) {
 
     const email = String(donnees.email || "").trim().toLowerCase();
     const prenom = String(donnees.prenom || "").trim();
+    const newsletter = Boolean(donnees.newsletter);
     const leurre = String(donnees.site_web || "").trim();
 
     // Honeypot : un robot qui remplit tous les champs se fait piéger ici.
@@ -80,8 +82,46 @@ exports.handler = async function (event) {
         return reponseErreur(502, "Impossible d'envoyer ton accès pour le moment.");
     }
 
+    if (newsletter) {
+        await inscrireNewsletterBrevo(email, prenom);
+    }
+
     return reponseSucces();
 };
+
+async function inscrireNewsletterBrevo(email, prenom) {
+    const cleApiBrevo = process.env.BREVO_API_KEY;
+    const idListe = process.env.BREVO_LIST_ID;
+
+    if (!cleApiBrevo || !idListe) {
+        console.error("Case newsletter cochée mais BREVO_API_KEY et/ou BREVO_LIST_ID absents des variables d'environnement Netlify.");
+        return;
+    }
+
+    try {
+        const reponseBrevo = await fetch("https://api.brevo.com/v3/contacts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                "api-key": cleApiBrevo
+            },
+            body: JSON.stringify({
+                email: email,
+                attributes: prenom ? { PRENOM: prenom } : {},
+                listIds: [Number(idListe)],
+                updateEnabled: true
+            })
+        });
+
+        if (!reponseBrevo.ok) {
+            const detailErreur = await reponseBrevo.text();
+            console.error("Erreur Brevo (ajout à la liste newsletter) :", reponseBrevo.status, detailErreur);
+        }
+    } catch (erreur) {
+        console.error("Erreur réseau vers Brevo :", erreur);
+    }
+}
 
 function reponseSucces() {
     return {

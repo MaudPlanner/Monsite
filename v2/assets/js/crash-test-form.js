@@ -29,6 +29,7 @@
 
         var email = formulaire.email.value.trim();
         var prenom = formulaire.prenom.value.trim();
+        var newsletter = formulaire.newsletter.checked;
         var leurre = formulaire.site_web.value.trim();
 
         // Honeypot : une visiteuse ne remplit jamais ce champ, un robot si.
@@ -51,6 +52,7 @@
             body: JSON.stringify({
                 email: email,
                 prenom: prenom,
+                newsletter: newsletter,
                 site_web: leurre
             })
         })
