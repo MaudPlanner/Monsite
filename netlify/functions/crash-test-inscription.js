@@ -10,12 +10,17 @@
 
    Variables d'environnement requises (Netlify → Site configuration →
    Environment variables — jamais commitées dans le dépôt) :
-     RESEND_API_KEY       clé API Resend
-     RESEND_SENDER_EMAIL  adresse expéditrice, validée dans Resend
-     RESEND_SENDER_NAME   nom affiché de l'expéditrice (optionnel,
-                           "Maud Planner" par défaut)
-     BREVO_API_KEY        clé API Brevo (newsletter uniquement)
-     BREVO_LIST_ID        ID de la liste Brevo "Newsletter Maud Planner"
+     RESEND_API_KEY            clé API Resend
+     RESEND_SENDER_EMAIL       adresse expéditrice, validée dans Resend
+     RESEND_SENDER_NAME        nom affiché de l'expéditrice (optionnel,
+                                "Maud Planner" par défaut)
+     BREVO_API_KEY             clé API Brevo (newsletter uniquement)
+     BREVO_LIST_ID             ID de la liste Brevo "Newsletter Maud Planner"
+     BREVO_LIST_ID_CRASHTEST   ID de la liste Brevo "Crash Test - Parcours"
+                                (dédiée : c'est elle qui déclenche
+                                l'automation Brevo des emails 3/4, pour ne
+                                pas la déclencher pour tout inscrit à la
+                                newsletter générale venu d'ailleurs)
 */
 
 const URL_OUTIL = "https://crash-test-de-ta-journee.netlify.app";
@@ -92,10 +97,23 @@ exports.handler = async function (event) {
 async function inscrireNewsletterBrevo(email, prenom) {
     const cleApiBrevo = process.env.BREVO_API_KEY;
     const idListe = process.env.BREVO_LIST_ID;
+    const idListeCrashTest = process.env.BREVO_LIST_ID_CRASHTEST;
 
     if (!cleApiBrevo || !idListe) {
         console.error("Case newsletter cochée mais BREVO_API_KEY et/ou BREVO_LIST_ID absents des variables d'environnement Netlify.");
         return;
+    }
+
+    // Deux listes : la newsletter générale (contenu Maud Planner au sens
+    // large), et une liste dédiée au parcours Crash Test qui sert de
+    // déclencheur à l'automation Brevo des emails 3/4. Sans la liste
+    // dédiée, l'automation se déclencherait pour n'importe qui rejoint la
+    // newsletter par un autre canal, sans avoir fait le Crash Test.
+    const listIds = [Number(idListe)];
+    if (idListeCrashTest) {
+        listIds.push(Number(idListeCrashTest));
+    } else {
+        console.error("BREVO_LIST_ID_CRASHTEST absent des variables d'environnement Netlify : contact ajouté à la newsletter générale uniquement, l'automation Crash Test ne se déclenchera pas.");
     }
 
     try {
@@ -109,7 +127,7 @@ async function inscrireNewsletterBrevo(email, prenom) {
             body: JSON.stringify({
                 email: email,
                 attributes: prenom ? { PRENOM: prenom } : {},
-                listIds: [Number(idListe)],
+                listIds: listIds,
                 updateEnabled: true
             })
         });
