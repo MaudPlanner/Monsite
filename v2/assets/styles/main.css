@@ -386,15 +386,40 @@ a {
 
 /* --- Témoignages ----------------------------------------------------------- */
 
+/* Mobile : bande déroulante horizontale, pour ne pas empiler 5 cartes */
 .temoignages {
     display: grid;
-    gap: 1.25rem;
-    margin: 2rem 0 0;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+}
+
+.temoignages__hint {
+    font-size: var(--taille-petit);
+    color: var(--orange-texte);
+    font-family: var(--police-sous-titres);
+    font-weight: 600;
+    margin: 0.25rem 0 0;
 }
 
 @media (min-width: 768px) {
     .temoignages {
+        grid-auto-flow: row;
         grid-template-columns: repeat(2, 1fr);
+        grid-auto-columns: auto;
+        gap: 1.25rem;
+        margin-top: 2rem;
+        overflow: visible;
+    }
+
+    .temoignages__hint {
+        display: none;
     }
 }
 
@@ -405,6 +430,7 @@ a {
     padding: 1.5rem;
     margin: 0;
     border-left: 5px solid var(--peche);
+    scroll-snap-align: start;
 }
 
 .temoignage p {
@@ -416,6 +442,97 @@ a {
     font-weight: 600;
     color: var(--bleu);
     margin-top: 0.75rem;
+}
+
+/* --- Récit (section « Mon parcours ») ------------------------------------- */
+
+.recit {
+    border-left: 3px solid var(--peche);
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.recit > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--police-titres);
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 0.9;
+    padding: 0.15rem 0.55rem 0 0;
+    color: var(--bleu);
+}
+
+@media (min-width: 768px) {
+    .recit {
+        padding-left: 2.25rem;
+    }
+}
+
+/* --- Avant / Après ------------------------------------------------------- */
+
+.avant-apres {
+    display: grid;
+    gap: 1rem;
+    margin: 1.75rem 0;
+}
+
+.avant-apres__col {
+    border-radius: var(--rayon);
+    padding: 1.5rem;
+}
+
+.avant-apres__col--avant {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.avant-apres__col--apres {
+    background-color: var(--blanc);
+    color: var(--encre);
+}
+
+.avant-apres__label {
+    font-family: var(--police-sous-titres);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: var(--taille-petit);
+    margin: 0 0 0.5rem;
+}
+
+.avant-apres__col--avant .avant-apres__label {
+    color: var(--peche-pale);
+}
+
+.avant-apres__col--apres .avant-apres__label {
+    color: var(--orange-texte);
+}
+
+.avant-apres__col p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .avant-apres {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+}
+
+/* --- Accueil : marqueur de section sous les surtitres -------------------- */
+
+.accueil .surtitre {
+    display: inline-block;
+}
+
+.accueil .surtitre::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 3px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background-color: var(--peche);
 }
 
 /* --- Appel final (entrée du parcours) -------------------------------------- */
